@@ -1,0 +1,33 @@
+{
+  "name": "leva-docs",
+  "version": "",
+  "private": true,
+  "author": "Apostolos Christodoulou <@a7sc11u>",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "clean": "rimraf .next"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@leva-ui/plugin-bezier": "^0.9.18",
+    "@leva-ui/plugin-plot": "^0.9.15",
+    "esbuild": "^0.14.10",
+    "glob": "^7.2.0",
+    "gray-matter": "^4.0.3",
+    "leva": "^0.9.18",
+    "mdx-bundler": "^8.0.1",
+    "mdx-utils": "^0.2.0",
+    "next": "^12.0.7",
+    "next-transpile-modules": "^9.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "remark-mdx-code-meta": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.15",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5",
+    "val-loader": "^4.0.0"
+  }
+}
