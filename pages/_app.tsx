@@ -3,6 +3,9 @@ import "../styles.css";
 import NextApp from "next/app";
 import { AppProps } from "next/app";
 
+import withTwindApp from "@twind/next/shim/app";
+import twindConfig from "../twind.config";
+
 import map from "../deps/mdx-map";
 
 type Doc = {
@@ -29,4 +32,4 @@ LevaApp.getInitialProps = async (appContext) => {
   return { ...appProps };
 };
 
-export default LevaApp;
+export default withTwindApp(twindConfig, LevaApp);

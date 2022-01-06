@@ -1,5 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
+import withTwindDocument from "@twind/next/shim/document";
+import { twindConfig } from "../twind.config";
+
 class LevaDoc extends Document {
   render() {
     return (
@@ -18,4 +21,4 @@ class LevaDoc extends Document {
   }
 }
 
-export default LevaDoc;
+export default withTwindDocument(twindConfig, LevaDoc);

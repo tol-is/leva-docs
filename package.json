@@ -12,6 +12,7 @@
   "dependencies": {
     "@leva-ui/plugin-bezier": "^0.9.18",
     "@leva-ui/plugin-plot": "^0.9.15",
+    "@twind/next": "^1.0.8",
     "esbuild": "^0.14.10",
     "glob": "^7.2.0",
     "gray-matter": "^4.0.3",
@@ -22,7 +23,8 @@
     "next-transpile-modules": "^9.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "remark-mdx-code-meta": "^1.0.0"
+    "remark-mdx-code-meta": "^1.0.0",
+    "twind": "^0.16.16"
   },
   "devDependencies": {
     "@types/react": "^17.0.15",
