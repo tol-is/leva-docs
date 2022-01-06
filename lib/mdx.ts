@@ -16,10 +16,20 @@ export const MDX_PATH = path.join(
 );
 
 export const GLOBALS = {
-  // twind: {
-  //   varName: "myTwind",
-  //   namedExports: ["tw"],
-  // },
+  leva: {
+    varName: "globalLeva",
+    namedExports: [
+      "useControls",
+      "useCreateStore",
+      "useStoreContext",
+      "Leva",
+      "LevaPanel",
+      "LevaStoreProvider",
+      "folder",
+      "button",
+      "monitor",
+    ],
+  },
 };
 
 export const getMDXMap = async () => {

@@ -4,7 +4,16 @@ description: Are tomatoes fruits or veggies?
 order: 0
 ---
 
+import { useControls } from "leva";
+
+export const Demo = () => {
+  const { name, aNumber } = useControls({ name: "World", aNumber: 0 });
+  return null;
+};
+
 ## A Tomato
+
+<Demo />
 
 ## Two Tomatos
 
