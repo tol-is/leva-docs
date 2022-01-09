@@ -13,9 +13,9 @@ import {
   monitor,
 } from "leva";
 
-export const markdownComponents = {
-  container: (props) => <div id="container" {...props} />,
-};
+import { MDXRhythm } from "./MDXRhythm";
+
+import { MDXComponents } from "./MDXComponents";
 
 export const MDXRenderer: React.FC<{ code: string }> = ({ code }) => {
   const Component = useMemo(
@@ -37,8 +37,8 @@ export const MDXRenderer: React.FC<{ code: string }> = ({ code }) => {
   );
 
   return (
-    <div>
-      <Component components={markdownComponents as any} />
-    </div>
+    <MDXRhythm>
+      <Component components={MDXComponents as any} />
+    </MDXRhythm>
   );
 };

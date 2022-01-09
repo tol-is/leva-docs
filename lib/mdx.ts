@@ -7,11 +7,9 @@ import matter from "gray-matter";
 import { bundleMDX } from "mdx-bundler";
 import { remarkMdxCodeMeta } from "remark-mdx-code-meta";
 
-import { getMarkdownToc } from "./get-markdown-toc";
-
 export const MDX_PATH = path.join(
   process.cwd(),
-  "mdx",
+  "docs",
   process.env.NEXT_PUBLIC_LEVA_VERSION
 );
 
@@ -39,13 +37,11 @@ export const getMDXMap = async () => {
     .reduce((result, file) => {
       const source = fs.readFileSync(file, "utf8");
       const { data } = matter(source);
-      const toc = getMarkdownToc(source);
       const slug = `${file.replace(`${MDX_PATH}`, "").replace(".mdx", "")}`;
       return [
         ...result,
         {
           ...data,
-          toc: toc,
           slug: slug,
         },
       ];

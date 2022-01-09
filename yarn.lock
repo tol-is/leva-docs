@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@a7sc11u/scramble@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@a7sc11u/scramble/-/scramble-0.0.6.tgz#97af23e54772987efbd5a5f5bcd94f5f29e203ec"
+  integrity sha512-iiBllEXYGx4ER3z1HGi5aHon8zDc5HABBi21/2Zd8VSWhO/XGb+ORyZ5O0BVHGGEfUejJuv0Zm/Dvtfyk4lpJQ==
+  dependencies:
+    "@radix-ui/react-polymorphic" "^0.0.1"
+
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -243,6 +250,11 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-use-layout-effect" "0.1.0"
 
+"@radix-ui/react-polymorphic@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-polymorphic/-/react-polymorphic-0.0.1.tgz#52e1a22374eec05a34a902e112e081f36e7e2b3b"
+  integrity sha512-oKP9mx114Wr/UlSyo/wgsHdckfgq3+yKoIXmNThOGzzlN+cikppwxAZK+z6NriO0p5Hyka/8xSFqGZokiS9Lxw==
+
 "@radix-ui/react-popper@0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-popper/-/react-popper-0.1.3.tgz#a93bdd72845566007e5f3868caddd62318bb781e"
@@ -393,7 +405,7 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.2.0.tgz#667bfc6186ae7c9e0b45a08960c551437176e1ca"
   integrity sha512-VkE3KLBmJwcCaVARtQpfuKcKv8gcBmUubrfHGF84dXuuW6jgsRYxPtzcIhPyK9WAPpRt2/xY6zkD9MnRaJzSyw==
 
-"@stitches/react@1.2.6":
+"@stitches/react@1.2.6", "@stitches/react@^1.2.6":
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.6.tgz#61f2a3d1110334ecd33bcb7463650127d42470cb"
   integrity sha512-gRVITYj8W4jJmoiVxWDv72yCvd12VvtUUAnTzs07EqmtvGCVgKZu3Dx0x5KVCcb0b6tfgvvNH2L84YrzdM4Mag==
@@ -3006,6 +3018,11 @@ postcss@8.2.15:
     colorette "^1.2.2"
     nanoid "^3.1.23"
     source-map "^0.6.1"
+
+prism-react-renderer@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.2.1.tgz#392460acf63540960e5e3caa699d851264e99b89"
+  integrity sha512-w23ch4f75V1Tnz8DajsYKvY5lF7H1+WvzvLUcF0paFxkTHSp42RS0H5CttdN2Q8RR3DRGZ9v5xD/h3n8C8kGmg==
 
 process@0.11.10:
   version "0.11.10"

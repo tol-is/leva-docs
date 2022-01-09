@@ -7,7 +7,6 @@ export default function Page() {
       <Head>
         <title>Leva</title>
       </Head>
-      HOME
     </article>
   );
 }

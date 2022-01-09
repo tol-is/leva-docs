@@ -6,11 +6,6 @@ const config = {
     providedExports: true,
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    config.module.rules.push({
-      test: require.resolve("./deps/mdx-map.js"),
-      use: [{ loader: "val-loader" }],
-    });
-
     // webfont loader
     config.module.rules.push({
       test: /\.(eot|otf|ttf|woff|woff2)$/,

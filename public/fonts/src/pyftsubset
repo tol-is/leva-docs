@@ -1,0 +1,10 @@
+
+
+
+pyftsubset\
+  SOURCE.woff2 \
+  --output-file="./DIST.woff2" \
+  --flavor=woff2 \
+  --layout-features="case,cpsp,kern,salt,smcp,tnum,zero,dlig"\
+  --unicodes="U+0000-00FF, U+20AC, U+2122"
+  

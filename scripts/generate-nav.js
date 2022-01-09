@@ -3,15 +3,30 @@ const path = require("path");
 const glob = require("glob");
 const matter = require("gray-matter");
 
-const { getMarkdownToc } = require("../lib/get-markdown-toc");
-
 const MDX_PATH = path.join(
   process.cwd(),
-  "mdx",
+  "docs",
   process.env.NEXT_PUBLIC_LEVA_VERSION
 );
 
-module.exports = async () => {
+const ROUTES_PATH = path.join(process.cwd(), "lib", "doc-routes.json");
+
+const getMarkdownToc = (source) =>
+  source
+    .split("\n")
+    .map((line) => {
+      const matches = line.match(/^#+[\s]+/);
+
+      return matches
+        ? {
+            level: matches[0].trim().length,
+            heading: line.replace(matches[0], "").trim(),
+          }
+        : false;
+    })
+    .filter(Boolean);
+
+const run = async () => {
   const files = glob.sync(`${MDX_PATH}/**/*.mdx`);
 
   const map = files
@@ -32,7 +47,8 @@ module.exports = async () => {
     .sort((a, b) => Number(a.order) - Number(b.order))
     .filter(Boolean);
 
-  return {
-    code: `module.exports = ${JSON.stringify(map)}`,
-  };
+  let data = JSON.stringify(map);
+  fs.writeFileSync(ROUTES_PATH, data);
 };
+
+run();
