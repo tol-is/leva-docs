@@ -33,7 +33,11 @@ const run = async () => {
     .reduce((result, file) => {
       const source = fs.readFileSync(file, "utf8");
       const { data } = matter(source);
-      const toc = getMarkdownToc(source);
+      console.log(data);
+      const toc = [
+        { level: 1, heading: data.title },
+        ...getMarkdownToc(source),
+      ];
       const slug = `${file.replace(`${MDX_PATH}`, "").replace(".mdx", "")}`;
       return [
         ...result,

@@ -37,8 +37,7 @@ export const twindConfig: Configuration = {
     },
     fontFamily: {
       body: [
-        "Averta",
-        "JetBrainsMono",
+        "iA Writer Quatro",
         "-apple-system",
         "system-ui",
         "BlinkMacSystemFont",
@@ -48,22 +47,24 @@ export const twindConfig: Configuration = {
         "Arial",
         "sans-serif",
       ],
-      mono: ["ui-monospace", "monospace"],
+      mono: ["iA Writer Mono", "ui-monospace", "monospace"],
     },
     colors: {
       transparent: "transparent",
       current: "currentColor",
       inherit: "inherit",
-      white: "#dddce5",
-      black: "#0a0a0a",
+      white: "#FEFEFE",
+      black: "#0b0c0e",
 
       grey: {
-        10: "#dddce5",
+        10: "#FEFEFE",
+        20: "#dddce5",
         40: "#686868",
-        60: "#4b4b4b",
-        80: "#1b1b1b",
-        100: "#0a0a0a",
+        60: "#373c4b",
+        80: "#171b1f",
+        100: "#181c20",
       },
+      accent: "#ff00cc",
     },
     fontSize: {
       xxs: [
@@ -73,21 +74,21 @@ export const twindConfig: Configuration = {
         },
       ],
       xs: [
-        "11px",
-        {
-          lineHeight: `${16 / 11}`,
-        },
-      ],
-      sm: [
         "12px",
         {
           lineHeight: `${20 / 14}`,
         },
       ],
-      base: [
-        "18px",
+      sm: [
+        "14px",
         {
-          lineHeight: `${28 / 18}`,
+          lineHeight: `${20 / 14}`,
+        },
+      ],
+      base: [
+        "17px",
+        {
+          lineHeight: `${27 / 17}`,
         },
       ],
       lg: [
@@ -124,36 +125,6 @@ export const twindConfig: Configuration = {
         "40px",
         {
           lineHeight: `${36 / 32}`,
-        },
-      ],
-      "6xl": [
-        "48px",
-        {
-          lineHeight: `1`,
-        },
-      ],
-      "7xl": [
-        "60px",
-        {
-          lineHeight: `1`,
-        },
-      ],
-      "8xl": [
-        "72px",
-        {
-          lineHeight: `1`,
-        },
-      ],
-      "9xl": [
-        "96px",
-        {
-          lineHeight: `1`,
-        },
-      ],
-      "10xl": [
-        "112px",
-        {
-          lineHeight: `1`,
         },
       ],
     },

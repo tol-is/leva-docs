@@ -13,7 +13,7 @@ import {
   monitor,
 } from "leva";
 
-import { MDXRhythm } from "./MDXRhythm";
+import { MDXProse } from "./MDXProse";
 
 import { MDXComponents } from "./MDXComponents";
 
@@ -37,8 +37,8 @@ export const MDXRenderer: React.FC<{ code: string }> = ({ code }) => {
   );
 
   return (
-    <MDXRhythm>
+    <MDXProse>
       <Component components={MDXComponents as any} />
-    </MDXRhythm>
+    </MDXProse>
   );
 };

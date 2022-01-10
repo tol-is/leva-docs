@@ -4,96 +4,38 @@ import Highlight, { defaultProps, PrismTheme } from "prism-react-renderer";
 
 const codeTheme = {
   plain: {
-    backgroundColor: "#181c20",
-    color: "#f8f8f8",
-    fontSize: "14px",
+    color: "#e5e5e5",
   },
   styles: [
     {
-      types: ["comment", "prolog", "doctype", "cdata", "punctuation"],
+      types: ["function", "variable"],
       style: {
-        color: "#6c6783",
+        color: "#b8b8b8",
       },
     },
     {
-      types: ["namespace"],
+      types: ["comment"],
       style: {
-        opacity: 0.7,
+        color: "#d8d8d8",
       },
     },
     {
-      types: ["tag", "operator", "number"],
+      types: ["string", "number", "builtin", "variable", "boolean"],
       style: {
-        color: "#e09142",
-      },
-    },
-    {
-      types: ["property", "function"],
-      style: {
-        color: "#9a86fd",
-      },
-    },
-    {
-      types: ["tag-id", "selector", "atrule-id"],
-      style: {
-        color: "#eeebff",
-      },
-    },
-    {
-      types: ["attr-name"],
-      style: {
-        color: "#c4b9fe",
+        color: "#077BFF",
       },
     },
     {
       types: [
-        "boolean",
-        "string",
-        "entity",
-        "url",
-        "attr-value",
         "keyword",
-        "control",
-        "directive",
-        "unit",
-        "statement",
-        "regex",
-        "at-rule",
-        "placeholder",
-        "variable",
+        "class-name",
+        "tag",
+        "attr-name",
+        "punctuation",
+        "operator",
       ],
       style: {
-        color: "#ffcc99",
-      },
-    },
-    {
-      types: ["deleted"],
-      style: {
-        textDecorationLine: "line-through",
-      },
-    },
-    {
-      types: ["inserted"],
-      style: {
-        textDecorationLine: "underline",
-      },
-    },
-    {
-      types: ["italic"],
-      style: {
-        fontStyle: "italic",
-      },
-    },
-    {
-      types: ["important", "bold"],
-      style: {
-        fontWeight: "bold",
-      },
-    },
-    {
-      types: ["important"],
-      style: {
-        color: "#c4b9fe",
+        color: "#e5e5e5",
       },
     },
   ],
@@ -108,7 +50,7 @@ export const CodeBlock = ({ code, language }) => {
       theme={codeTheme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={tw("px-3 py-2 ", className)} style={style}>
+        <pre className={tw(className)} style={style}>
           {tokens.map((line, i) => {
             const { style, ...rest } = getLineProps({ line, key: i });
             return (

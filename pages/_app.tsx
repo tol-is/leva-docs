@@ -7,8 +7,10 @@ import withTwindApp from "@twind/next/shim/app";
 import twindConfig from "../twind.config";
 
 import { Sidenav } from "@components/Sidenav";
-import { Container } from "@components/Container";
+import { Container } from "@components/UI";
 import { AppHeader } from "@components/AppHeader";
+
+import Demo from "../demos/busy";
 
 type Doc = {
   code: string;
@@ -23,8 +25,8 @@ interface LevaAppProps extends AppProps {}
 const LevaApp = ({ Component, pageProps }: LevaAppProps) => {
   return (
     <div>
-      <AppHeader />
       <Sidenav />
+      <Demo />
       <Container>
         <Component {...pageProps} />
       </Container>

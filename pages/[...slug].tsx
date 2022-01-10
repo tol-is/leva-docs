@@ -4,7 +4,8 @@ import ErrorPage from "next/error";
 import Head from "next/head";
 
 import { getDocBySlug, getWebsiteSlugs } from "@lib/mdx";
-import { MDXRenderer } from "components/MDXRenderer";
+import { MDXRenderer } from "@components/MDXRenderer";
+import { Article } from "@components/UI";
 
 export default function Page({ post }) {
   const router = useRouter();
@@ -24,7 +25,9 @@ export default function Page({ post }) {
               <Head>
                 <title>Leva | {post.frontmatter.title}</title>
               </Head>
-              <MDXRenderer code={post.code} />
+              <Article>
+                <MDXRenderer code={post.code} />
+              </Article>
             </article>
           </>
         )}
