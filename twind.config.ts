@@ -37,7 +37,6 @@ export const twindConfig: Configuration = {
     },
     fontFamily: {
       body: [
-        "Commissioner",
         "Averta",
         "JetBrainsMono",
         "-apple-system",

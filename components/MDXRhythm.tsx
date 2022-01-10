@@ -7,15 +7,15 @@ const rhythm = css`
   }
 
   h2 {
-    @apply text-xl;
+    @apply text-xl font-bold;
   }
 
   h3 {
-    @apply text-lg;
+    @apply text-lg font-bold;
   }
 
   h4 {
-    @apply text-abse;
+    @apply text-base font-bold;
   }
 
   h5 {
