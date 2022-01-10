@@ -4,9 +4,9 @@ import Highlight, { defaultProps, PrismTheme } from "prism-react-renderer";
 
 const codeTheme = {
   plain: {
-    backgroundColor: "#141619",
+    backgroundColor: "#181c20",
     color: "#f8f8f8",
-    fontSize: "15px",
+    fontSize: "14px",
   },
   styles: [
     {
@@ -108,10 +108,7 @@ export const CodeBlock = ({ code, language }) => {
       theme={codeTheme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre
-          className={tw("pl-4 pr-3 py-2 border-l-2 border-grey-20", className)}
-          style={style}
-        >
+        <pre className={tw("px-3 py-2 ", className)} style={style}>
           {tokens.map((line, i) => {
             const { style, ...rest } = getLineProps({ line, key: i });
             return (

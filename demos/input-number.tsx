@@ -18,7 +18,7 @@ export default function InputNumber() {
 
   return (
     <div>
-      <LevaPanel store={store} flat fill titleBar={false} />
+      <LevaPanel store={store} fill flat titleBar={false} />
     </div>
   );
 }
