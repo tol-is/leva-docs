@@ -89,6 +89,7 @@ export async function getMDX(filePath: string) {
 export const getWebsiteSlugs = async () => {
   const docs = await getMDXMap();
 
+  console.log(docs);
   return docs.map((doc) => doc.slug);
 };
 

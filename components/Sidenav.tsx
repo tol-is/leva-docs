@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { tw } from "twind";
 
@@ -49,7 +49,6 @@ const SidenavLink = ({ heading, level, parentSlug }) => {
 
 export const Sidenav = () => {
   const sidenav = map as unknown as TDoc[];
-  console.log(sidenav);
   return (
     <div className="fixed left-0 top-10 bottom-0 w-48">
       <ScrollArea.Root className="absolute h-full">
