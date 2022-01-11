@@ -32,7 +32,7 @@ const SidenavLink = ({ heading, level, parentSlug }) => {
   return (
     <Link href={`${parentSlug}/`}>
       <a
-        className="relative py-1 flex items-center my-px flex items-center justify-start group hover:(z-10)"
+        className="relative py-1 flex items-center my-px px-1 flex items-center justify-start group hover:(z-10)"
         onMouseOver={onOver}
         onMouseOut={onOut}
       >
@@ -51,14 +51,10 @@ export const Sidenav = () => {
   const sidenav = map as unknown as TDoc[];
   console.log(sidenav);
   return (
-    <div className="fixed left-0 top-0 bottom-0 w-48">
+    <div className="fixed left-0 top-10 bottom-0 w-48">
       <ScrollArea.Root className="absolute h-full">
         <ScrollArea.Viewport className="absolute h-full">
-          <div className="flex flex-col justify-center items-start space-y-5 px-5 py-5">
-            <Link href="/">
-              <a>Leva</a>
-            </Link>
-
+          <div className="flex flex-col justify-center items-start space-y-5 px-5 py-10">
             {sidenav.map((doc) => (
               <div className="flex flex-col items-start">
                 {doc.toc.map((section) => (

@@ -13,7 +13,7 @@ export const twindConfig: Configuration = {
 
       body {
         overflow-x: hidden;
-        @apply font-body bg-black text-white text-base;
+        @apply font-body bg-grey-100 text-white text-base;
       }
 
       :focus {
@@ -54,14 +54,14 @@ export const twindConfig: Configuration = {
       current: "currentColor",
       inherit: "inherit",
       white: "#FEFEFE",
-      black: "#0b0c0e",
+      black: "#111316",
 
       grey: {
         10: "#FEFEFE",
         20: "#dddce5",
         40: "#686868",
         60: "#373c4b",
-        80: "#171b1f",
+        80: "#1e222c",
         100: "#181c20",
       },
       accent: "#ff00cc",

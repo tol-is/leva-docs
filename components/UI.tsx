@@ -1,5 +1,5 @@
 export const Article = ({ children }) => {
-  return <article className="pt-5 pb-7">{children}</article>;
+  return <article className="pt-20 pb-12">{children}</article>;
 };
 
 export const Container = ({ children }) => {

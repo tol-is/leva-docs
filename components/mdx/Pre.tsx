@@ -16,7 +16,7 @@ export const Pre = ({ children, demo }) => {
   );
 
   return (
-    <div className="pre flex bg-grey-80 p-5">
+    <div className="pre flex bg-grey-80 p-5 rounded-sm">
       <div className="flex-1">
         <CodeBlock code={code} language={language} />
       </div>

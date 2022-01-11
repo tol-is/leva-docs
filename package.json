@@ -5,7 +5,7 @@
   "author": "Apostolos Christodoulou <@a7sc11u>",
   "scripts": {
     "dev": "yarn nav && next",
-    "build": "next build",
+    "build": "yarn nav && next build",
     "clean": "rimraf .next",
     "nav": "node scripts/generate-nav.js"
   },

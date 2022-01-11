@@ -10,8 +10,6 @@ import { Sidenav } from "@components/Sidenav";
 import { Container } from "@components/UI";
 import { AppHeader } from "@components/AppHeader";
 
-import Demo from "../demos/busy";
-
 type Doc = {
   code: string;
   frontmatter: {
@@ -25,8 +23,8 @@ interface LevaAppProps extends AppProps {}
 const LevaApp = ({ Component, pageProps }: LevaAppProps) => {
   return (
     <div>
+      <AppHeader />
       <Sidenav />
-      <Demo />
       <Container>
         <Component {...pageProps} />
       </Container>
