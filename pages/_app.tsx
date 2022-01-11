@@ -22,8 +22,8 @@ interface LevaAppProps extends AppProps {}
 const LevaApp = ({ Component, pageProps }: LevaAppProps) => {
   return (
     <div>
-      {/* <AppHeader />
-      <Sidenav /> */}
+      <AppHeader />
+      <Sidenav />
       <Container>
         <Component {...pageProps} />
       </Container>
