@@ -55,10 +55,8 @@ export default function Demo() {
   );
 
   return (
-    <div className="relative h-[560px] bg-white">
-      <div className="absolute w-72 right-5 top-5">
-        <LevaPanel store={store} fill />
-      </div>
+    <div className="absolute w-72 right-5 top-5">
+      <LevaPanel store={store} fill />
     </div>
   );
 }

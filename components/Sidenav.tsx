@@ -54,7 +54,7 @@ const SidenavLink = ({ heading, id, parentSlug }) => {
 export const Sidenav = () => {
   const sidenav = map as unknown as TDoc[];
   return (
-    <div className="fixed left-0 top-10 bottom-0 w-48">
+    <div className="hidden md:block fixed left-0 top-10 bottom-0 w-48">
       <ScrollArea.Root className="absolute h-full">
         <ScrollArea.Viewport className="absolute h-full">
           <div className="flex flex-col justify-center items-start space-y-5 px-5 py-10">

@@ -22,11 +22,14 @@ export const Pre = ({ children, demo }) => {
   );
 
   return (
-    <div data-mdx="pre" className="flex bg-grey-80 p-5 rounded-sm">
-      <div className="flex-1">
+    <div
+      data-mdx="pre"
+      className="flex flex-col sm:flex-row bg-grey-80 p-5 rounded-sm"
+    >
+      <div className="order-2 sm:order-1 flex-1 mt-6 sm:mt-0">
         <CodeBlock code={code} language={language} />
       </div>
-      <div className="w-72 flex items-center">
+      <div className="order-1 sm:order-2 w-full sm:w-72 flex items-center">
         <LevaPanel store={store} fill titleBar={false} />
       </div>
     </div>
