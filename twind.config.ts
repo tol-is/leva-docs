@@ -64,7 +64,7 @@ export const twindConfig: Configuration = {
         80: "#1e222c",
         100: "#181c20",
       },
-      accent: "#ff00cc",
+      accent: "#077BFF",
     },
     fontSize: {
       xxs: [

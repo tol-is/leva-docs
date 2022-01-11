@@ -3,6 +3,7 @@ import path from "path";
 
 import glob from "glob";
 import matter from "gray-matter";
+import rehypeSlug from "rehype-slug";
 
 import { bundleMDX } from "mdx-bundler";
 import { remarkMdxCodeMeta } from "remark-mdx-code-meta";
@@ -52,7 +53,7 @@ export const getMDXMap = async () => {
 
 const getMDXOptions = () => {
   const remarkPlugins = [remarkMdxCodeMeta];
-  const rehypePlugins = [];
+  const rehypePlugins = [rehypeSlug];
 
   return {
     esbuildOptions(options) {
@@ -96,5 +97,7 @@ export const getWebsiteSlugs = async () => {
 export const getDocBySlug = async (slug: string) => {
   const filePath = path.join(MDX_PATH, `${slug}.mdx`);
 
-  return getMDX(filePath);
+  const doc = await getMDX(filePath);
+  console.log(doc);
+  return doc;
 };

@@ -9,6 +9,14 @@ const MDX_PATH = path.join(
   process.env.NEXT_PUBLIC_LEVA_VERSION
 );
 
+const slugify = (input) =>
+  input
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replaceAll("_", "-")
+    .replaceAll("--", "-")
+    .slice(0, 200);
+
 const ROUTES_PATH = path.join(process.cwd(), "lib", "doc-routes.json");
 
 const getMarkdownToc = (source) =>
@@ -21,6 +29,7 @@ const getMarkdownToc = (source) =>
         ? {
             level: matches[0].trim().length,
             heading: line.replace(matches[0], "").trim(),
+            id: slugify(line.replace(matches[0], "").trim()),
           }
         : false;
     })

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { tw } from "twind";
+import { slugify } from "@lib/slug";
 
 import map from "@lib/doc-routes.json";
 
@@ -18,9 +19,10 @@ type TDoc = {
 type TDocSection = {
   heading: string;
   level: number;
+  id: string;
 };
 
-const SidenavLink = ({ heading, level, parentSlug }) => {
+const SidenavLink = ({ heading, id, parentSlug }) => {
   const [hover, setHover] = useState(false);
   const onOver = () => {
     setHover(true);
@@ -29,8 +31,10 @@ const SidenavLink = ({ heading, level, parentSlug }) => {
   const onOut = () => {
     setHover(false);
   };
+  const href = id ? `${parentSlug}/#${id}` : `${parentSlug}`;
+
   return (
-    <Link href={`${parentSlug}/`}>
+    <Link href={href}>
       <a
         className="relative py-1 flex items-center my-px px-1 flex items-center justify-start group hover:(z-10)"
         onMouseOver={onOver}
