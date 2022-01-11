@@ -87,7 +87,7 @@ export const twindConfig: Configuration = {
       base: [
         "16px",
         {
-          lineHeight: `${27 / 16}`,
+          lineHeight: `${24 / 16}`,
         },
       ],
       lg: [
