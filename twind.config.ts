@@ -36,7 +36,7 @@ export const twindConfig: Configuration = {
     },
     fontFamily: {
       body: [
-        "'iA Writer Quattro S'",
+        "Averta",
         "-apple-system",
         "system-ui",
         "BlinkMacSystemFont",
@@ -46,7 +46,8 @@ export const twindConfig: Configuration = {
         "Arial",
         "sans-serif",
       ],
-      mono: ["iA Writer Mono S", "ui-monospace", "monospace"],
+
+      mono: ["iA Writer Quattro S", "ui-monospace", "monospace"],
     },
     colors: {
       transparent: "transparent",
@@ -85,9 +86,9 @@ export const twindConfig: Configuration = {
         },
       ],
       base: [
-        "16px",
+        "17px",
         {
-          lineHeight: `${24 / 16}`,
+          lineHeight: `${27 / 17}`,
         },
       ],
       lg: [

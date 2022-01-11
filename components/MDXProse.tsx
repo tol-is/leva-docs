@@ -3,23 +3,23 @@ import { css } from "twind/css";
 
 const rhythm = css`
   h1 {
-    @apply text-4xl font-bold;
+    @apply text-4xl font-bold font-mono;
   }
 
   h2 {
-    @apply text-2xl font-bold;
+    @apply text-2xl font-bold font-mono;
   }
 
   h3 {
-    @apply text-xl font-bold;
+    @apply text-xl font-bold font-mono;
   }
 
   h4 {
-    @apply text-base font-bold;
+    @apply text-base font-bold font-mono;
   }
 
   h5 {
-    @apply text-sm font-bold;
+    @apply text-sm font-bold font-mono;
   }
 
   p,
