@@ -41,7 +41,6 @@ const SidenavLink = ({ heading, id, parentSlug }) => {
         onMouseOut={onOut}
       >
         <span
-          aria-hidden
           className={tw("block mt-0.5", "relative z-10 text-sm")}
         >
           {heading}

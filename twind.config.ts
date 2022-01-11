@@ -14,6 +14,7 @@ export const twindConfig: Configuration = {
       body {
         overflow-x: hidden;
         @apply font-body bg-grey-100 text-white text-base;
+        font-feature-settings: "salt";
       }
 
       :focus {
