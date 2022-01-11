@@ -21,7 +21,6 @@ export default function Page({ post }) {
         <h1>Loading…</h1>
       ) : (
         <>
-          <div>YAY</div>
           <article>
             <Head>
               <title>Leva | {post.frontmatter.title}</title>
