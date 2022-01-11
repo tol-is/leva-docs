@@ -1,131 +1,65 @@
 @font-face {
-  font-family: "iA Writer Duo";
+  font-family: "iA Writer Mono S";
   font-display: swap;
   font-style: normal;
   font-weight: 700;
-  src: url("/fonts/iAWriterDuo/iAWriterDuo-Bold.woff2") format(woff2);
+  src: url("./fonts/iAWriterMono/iAWriterMono-Bold.woff2") format(woff2);
 }
 
 @font-face {
-  font-family: "iA Writer Duo";
+  font-family: "iA Writer Mono S";
   font-display: swap;
   font-style: italic;
   font-weight: 700;
-  src: url("/fonts/iAWriterDuo/iAWriterDuo-BoldItalic.woff2") format(woff2);
+  src: url("./fonts/iAWriterMono/iAWriterMono-BoldItalic.woff2") format(woff2);
 }
 
 @font-face {
-  font-family: "iA Writer Duo";
+  font-family: "iA Writer Mono S";
   font-display: swap;
   font-style: italic;
   font-weight: 400;
-  src: url("/fonts/iAWriterDuo/iAWriterDuo-Italic.woff2") format(woff2);
+  src: url("./fonts/iAWriterMono/iAWriterMono-Italic.woff2") format(woff2);
 }
 
 @font-face {
-  font-family: "iA Writer Duo";
+  font-family: "iA Writer Mono S";
   font-display: swap;
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/iAWriterDuo/iAWriterDuo-Regular.woff2") format(woff2);
+  src: url("./fonts/iAWriterMono/iAWriterMono-Regular.woff2") format(woff2);
 }
 
 @font-face {
-  font-family: "iA Writer Duospace";
+  font-family: "iA Writer Quattro S";
   font-display: swap;
   font-style: normal;
   font-weight: 700;
-  src: url("/fonts/iAWriterDuospace/iAWriterDuospace-Bold.woff2") format(woff2);
+  src: url("./fonts/iAWriterQuattro/iAWriterQuattro-Bold.woff2") format(woff2);
 }
 
 @font-face {
-  font-family: "iA Writer Duospace";
+  font-family: "iA Writer Quattro S";
   font-display: swap;
   font-style: italic;
   font-weight: 700;
-  src: url("/fonts/iAWriterDuospace/iAWriterDuospace-BoldItalic.woff2")
+  src: url("./fonts/iAWriterQuattro/iAWriterQuattro-BoldItalic.woff2")
     format(woff2);
 }
 
 @font-face {
-  font-family: "iA Writer Duospace";
+  font-family: "iA Writer Quattro S";
   font-display: swap;
   font-style: italic;
   font-weight: 400;
-  src: url("/fonts/iAWriterDuospace/iAWriterDuospace-Italic.woff2")
+  src: url("./fonts/iAWriterQuattro/iAWriterQuattro-Italic.woff2") format(woff2);
+}
+
+@font-face {
+  font-family: "iA Writer Quattro S";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/iAWriterQuattro/iAWriterQuattro-Regular.woff2")
     format(woff2);
-}
-
-@font-face {
-  font-family: "iA Writer Duospace";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/iAWriterDuospace/iAWriterDuospace-Regular.woff2")
-    format(woff2);
-}
-
-@font-face {
-  font-family: "iA Writer Mono";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/iAWriterMono/iAWriterMono-Bold.woff2") format(woff2);
-}
-
-@font-face {
-  font-family: "iA Writer Mono";
-  font-display: swap;
-  font-style: italic;
-  font-weight: 700;
-  src: url("/fonts/iAWriterMono/iAWriterMono-BoldItalic.woff2") format(woff2);
-}
-
-@font-face {
-  font-family: "iA Writer Mono";
-  font-display: swap;
-  font-style: italic;
-  font-weight: 400;
-  src: url("/fonts/iAWriterMono/iAWriterMono-Italic.woff2") format(woff2);
-}
-
-@font-face {
-  font-family: "iA Writer Mono";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/iAWriterMono/iAWriterMono-Regular.woff2") format(woff2);
-}
-
-@font-face {
-  font-family: "iA Writer Quattro";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/iAWriterQuattro/iAWriterQuattro-Bold.woff2") format(woff2);
-}
-
-@font-face {
-  font-family: "iA Writer Quattro";
-  font-display: swap;
-  font-style: italic;
-  font-weight: 700;
-  src: url("/fonts/iAWriterQuattro/iAWriterQuattro-BoldItalic.woff2")
-    format(woff2);
-}
-
-@font-face {
-  font-family: "iA Writer Quattro";
-  font-display: swap;
-  font-style: italic;
-  font-weight: 400;
-  src: url("/fonts/iAWriterQuattro/iAWriterQuattro-Italic.woff2") format(woff2);
-}
-
-@font-face {
-  font-family: "iA Writer Quattro";
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/iAWriterQuattro/iAWriterQuattro-Regular.woff2") format(woff2);
 }
