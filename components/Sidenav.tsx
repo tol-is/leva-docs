@@ -36,7 +36,7 @@ const SidenavLink = ({ heading, id, parentSlug }) => {
   return (
     <Link href={href}>
       <a
-        className="relative py-1 flex items-center my-px px-1 flex items-center justify-start group hover:(z-10)"
+        className="relative py-0.5 flex items-center my-px flex items-center justify-start group border-b-1 border-transparent focus:(border-white) hover:(border-b-1 border-white)"
         onMouseOver={onOver}
         onMouseOut={onOut}
       >

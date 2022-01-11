@@ -13,7 +13,7 @@ export const AppHeader = () => {
 };
 
 export const Article = ({ children }) => {
-  return <article className="pt-20 pb-12">{children}</article>;
+  return <article className="pt-16 pb-12">{children}</article>;
 };
 
 export const Container = ({ children }) => {

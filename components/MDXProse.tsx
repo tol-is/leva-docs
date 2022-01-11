@@ -46,8 +46,7 @@ const rhythm = css`
     list-offset: 0;
   }
 
-  pre,
-  .pre {
+  [data-mdx="pre"] {
     max-width: 52rem;
   }
 
@@ -98,10 +97,12 @@ const rhythm = css`
     @apply mb-3;
   }
 
-  > pre,
-  > div,
-  > table {
+  [data-mdx="pre"] {
     @apply mb-7;
+  }
+
+  [data-mdx="intro"] {
+    @apply mb-16;
   }
 
   & > :first-child {

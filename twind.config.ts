@@ -17,8 +17,7 @@ export const twindConfig: Configuration = {
       }
 
       :focus {
-        outline: 1px solid #e5e5e5;
-        outline-offset: 0px;
+        outline: none;
       }
     `;
   },
