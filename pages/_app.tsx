@@ -1,4 +1,5 @@
 import "../styles/fonts.css";
+import "../styles/index.css";
 
 import NextApp from "next/app";
 import { AppProps } from "next/app";

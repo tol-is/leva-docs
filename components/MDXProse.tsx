@@ -2,29 +2,41 @@ import { tw } from "twind";
 import { css } from "twind/css";
 
 const rhythm = css`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-grey-30;
+  }
+  p,
+  ul {
+    @apply text-grey-30;
+  }
+
   h1 {
-    @apply text-4xl font-bold;
+    @apply text-6xl font-normal;
   }
 
   h2 {
-    @apply text-2xl font-bold;
+    @apply text-4xl font-normal;
   }
 
   h3 {
-    @apply text-xl font-bold;
+    @apply text-2xl font-normal;
   }
 
   h4 {
-    @apply text-base font-bold;
+    @apply text-xl font-bold;
   }
 
   h5 {
-    @apply text-sm font-bold;
+    @apply text-lg font-bold;
   }
 
   p,
   li {
-    @apply text-base;
+    @apply text-lg;
   }
 
   pre {
@@ -37,7 +49,7 @@ const rhythm = css`
   > h3,
   > h4,
   > h5 {
-    max-width: 32rem;
+    max-width: 40rem;
   }
 
   > ol,
@@ -46,13 +58,16 @@ const rhythm = css`
     list-style-position: inside;
   }
 
-  [data-mdx="pre"] {
-    max-width: 52rem;
+  [data-mdx="pre-container"] {
+    max-width: 60rem;
+  }
+
+  [data-mdx="pre-side-leva"] {
+    @apply sm:w-64 lg:w-80;
   }
 
   pre,
   code {
-    max-width: 32rem;
     oveflow: hidden;
     white-space: pre-wrap;
     word-break: keep-all;
@@ -94,11 +109,11 @@ const rhythm = css`
 
   > ul > li,
   > ol > li {
-    @apply mb-3;
+    @apply mb-0.5;
   }
 
-  > [data-mdx="pre"] {
-    @apply mb-7;
+  > [data-mdx="pre-container"] {
+    @apply mt-10 mb-10;
   }
 
   > [data-mdx="intro"] {

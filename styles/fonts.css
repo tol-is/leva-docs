@@ -1,4 +1,22 @@
 @font-face {
+  font-family: "Averta PE";
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: url("./fonts/AvertaPE-Regular.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+20AC, U+2122;
+}
+
+@font-face {
+  font-family: "Averta PE";
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src: url("./fonts/AvertaPE-Bold.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+20AC, U+2122;
+}
+
+@font-face {
   font-family: "iA Writer Mono S";
   font-display: swap;
   font-style: normal;

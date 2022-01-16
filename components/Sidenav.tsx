@@ -36,13 +36,11 @@ const SidenavLink = ({ heading, id, parentSlug }) => {
   return (
     <Link href={href}>
       <a
-        className="relative py-0.5 flex items-center my-px flex items-center justify-start group border-b-1 border-transparent focus:(border-white) hover:(border-b-1 border-white)"
+        className="relative py-0.5 my-px flex items-center  justify-start group border-b-1 border-transparent focus:(border-white) hover:(border-b-1 border-white)"
         onMouseOver={onOver}
         onMouseOut={onOut}
       >
-        <span
-          className={tw("block mt-0.5", "relative z-10 text-sm")}
-        >
+        <span className={tw("block mt-0.5", "relative z-10 text-sm")}>
           {heading}
         </span>
       </a>

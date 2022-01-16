@@ -21,14 +21,12 @@ export default function Page({ post }) {
         <h1>Loading…</h1>
       ) : (
         <>
-          <article>
-            <Head>
-              <title>Leva | {post.frontmatter.title}</title>
-            </Head>
-            <Article>
-              <MDXRenderer code={post.code} />
-            </Article>
-          </article>
+          <Head>
+            <title>Leva | {post.frontmatter.title}</title>
+          </Head>
+          <Article>
+            <MDXRenderer code={post.code} />
+          </Article>
         </>
       )}
     </>

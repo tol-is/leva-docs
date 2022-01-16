@@ -13,7 +13,7 @@ export const twindConfig: Configuration = {
 
       body {
         overflow-x: hidden;
-        @apply font-body bg-grey-100 text-white text-base;
+        @apply font-body bg-grey-100 text-body text-base;
         font-feature-settings: "salt";
       }
 
@@ -37,7 +37,7 @@ export const twindConfig: Configuration = {
     },
     fontFamily: {
       body: [
-        "'iA Writer Quattro S'",
+        "Averta PE",
         "-apple-system",
         "system-ui",
         "BlinkMacSystemFont",
@@ -53,13 +53,16 @@ export const twindConfig: Configuration = {
       transparent: "transparent",
       current: "currentColor",
       inherit: "inherit",
+      body: "#BDBBCA",
       white: "#FEFEFE",
       black: "#111316",
 
       grey: {
         10: "#FEFEFE",
         20: "#dddce5",
-        40: "#686868",
+        30: "#BDBBCA",
+        40: "#7e848b",
+        50: "#373c4b",
         60: "#373c4b",
         80: "#1e222c",
         100: "#181c20",
@@ -125,6 +128,12 @@ export const twindConfig: Configuration = {
         "40px",
         {
           lineHeight: `${36 / 32}`,
+        },
+      ],
+      "6xl": [
+        "46px",
+        {
+          lineHeight: `${58 / 46}`,
         },
       ],
     },
