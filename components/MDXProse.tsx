@@ -49,7 +49,7 @@ const rhythm = css`
   > h3,
   > h4,
   > h5 {
-    max-width: 40rem;
+    max-width: 37rem;
   }
 
   > ol,
@@ -59,7 +59,7 @@ const rhythm = css`
   }
 
   [data-mdx="pre-container"] {
-    max-width: 60rem;
+    max-width: 56.25rem;
   }
 
   [data-mdx="pre-side-leva"] {
@@ -78,11 +78,11 @@ const rhythm = css`
   }
 
   > h2 {
-    @apply mt-20 mb-4;
+    @apply mt-24 mb-2;
   }
 
   > h3 {
-    @apply mt-12 mb-4;
+    @apply mt-26 mb-4;
   }
 
   > h2 + h3 {

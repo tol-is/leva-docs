@@ -10,13 +10,13 @@ const codeTheme = {
     {
       types: ["function", "variable"],
       style: {
-        color: "#b8b8b8",
+        color: "#e5e5e5",
       },
     },
     {
       types: ["comment"],
       style: {
-        color: "#d8d8d8",
+        color: "#535a6a",
       },
     },
     {
