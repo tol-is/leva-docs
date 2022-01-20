@@ -1,11 +1,11 @@
 ---
 title: Inputs
 description: Potato is a veggie
-order: 10
+order: 20
 ---
 
 <Intro
-  title="Input Types"
+  title="Inputs"
   description="leva` will check the input settings and provide the best possible component."
 ></Intro>
 
@@ -14,9 +14,18 @@ order: 10
 A single numerical input.
 
 ```jsx demo="input-number"
-const { myNumber } = useControls({
-  myNumber: 4,
-});
+useControls(
+  {
+    myNumber: 4,
+    myFooColor: "#fff",
+    vec3: {
+      x: 0,
+      y: 2,
+      z: 1.5,
+    },
+  },
+  { store: store }
+);
 ```
 
 - Increase / decrease numbers with arrow keys, with alt (±0.1) and shift (±10) modifiers support.
@@ -150,6 +159,92 @@ useControls({
 ```
 
 ### Vector3
+
+Very similar to Vector2 but now with the z axis.
+
+```jsx
+useControls({
+  vec3: {
+    x: 0,
+    y: 2,
+    z: 1.5,
+  },
+  anotherVec3: [3, 1, 1],
+});
+```
+
+One difference with Vector2 to keep in mind is that you don't have the `joystick` option.
+
+## Button
+
+## Button Group
+
+## Image
+
+## Color
+
+## Vector2
+
+Compound input of two numerical values without `min` and `max` bounds.
+Will be used when value is an object with `x` and `y` properties or an array of
+two numbers.
+
+```jsx
+const { position } = useControls({
+  position: { x: 0, y: 0 },
+  boxSize: [10, 20],
+});
+```
+
+The joystick can be hidden with `joystick: false` and inverted with `"invertY"`.
+
+```jsx
+const { position } = useControls({
+  position: {
+    value: { x: 0, y: 0 },
+    joystick: "invertY",
+  },
+  boxSize: {
+    value: [10, 20],
+    joystick: false,
+  },
+});
+```
+
+The `step` setting can be used to change joystick's resistance.
+
+```jsx
+const { position } = useControls({
+  position: {
+    value: { x: 0, y: 0 },
+    step: 0.1,
+  },
+});
+```
+
+You can also use your keyboard to control the step.
+Pressing the shift key while dragging increases the step. Pressing alt decreases the step.
+
+You can set options separately for each coordinate by nesting them under coordinate's key.
+
+```jsx
+useControls({
+  vec2: {
+    value: {
+      x: 0,
+      y: 0,
+    },
+    x: {
+      step: 0.1,
+    },
+    y: {
+      step: 1,
+    },
+  },
+});
+```
+
+## Vector3
 
 Very similar to Vector2 but now with the z axis.
 

@@ -73,6 +73,10 @@ const rhythm = css`
     word-break: keep-all;
   }
 
+  code {
+    @apply font-mono text-accent bg-grey-80 rounded text-[0.92em];
+  }
+
   > hr {
     @apply my-0;
   }

@@ -14,6 +14,8 @@ export const twindConfig: Configuration = {
       body {
         overflow-x: hidden;
         @apply font-body bg-grey-100 text-body text-base;
+      }
+      code {
         font-feature-settings: "salt";
       }
 
@@ -47,7 +49,8 @@ export const twindConfig: Configuration = {
         "Arial",
         "sans-serif",
       ],
-      mono: ["iA Writer Mono S", "ui-monospace", "monospace"],
+
+      mono: ["iA Writer Mono S", "IBM Plex Mono", "ui-monospace", "monospace"],
     },
     colors: {
       transparent: "transparent",
