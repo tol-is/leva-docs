@@ -7,6 +7,7 @@ import { AppProps } from "next/app";
 import withTwindApp from "@twind/next/shim/app";
 import twindConfig from "../twind.config";
 
+import { Hero } from "@components/hero";
 import { Sidenav } from "@components/Sidenav";
 import { AppHeader, Container } from "@components/UI";
 
