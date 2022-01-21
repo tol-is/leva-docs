@@ -46,7 +46,7 @@ const Particles = () => {
   );
 };
 
-export const Hero = () => {
+export const Hero = (props) => {
   return (
     <Canvas
       style={{
@@ -60,10 +60,13 @@ export const Hero = () => {
     >
       <PerspectiveCamera
         position={[0, 0, 5]}
+        scale={1}
+        rotation={[0, 0, 0]}
         makeDefault
         near={0.1}
         far={1000}
         fov={75}
+        {...props}
       />
       <Particles />
     </Canvas>
