@@ -1,14 +1,19 @@
-import React, { useEffect, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
+import React, { useEffect, useRef, useState } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { PerspectiveCamera } from "@react-three/drei";
+import { useSpring } from "react-spring";
 
-import { useControls } from "leva";
+import { buttonGroup, folder, monitor, useControls } from "leva";
 
 const ParticleShaderMaterial = {
   uniforms: {
     wave: { value: 0.5 },
     time: { value: 1.0 },
     walk: { value: [0.0, 0.0], type: "v2" },
+
+    color_r: { value: 1.0 },
+    color_g: { value: 0.0 },
+    color_b: { value: 0.0 },
   },
   vertexShader: `
   uniform float time;
@@ -100,53 +105,144 @@ const ParticleShaderMaterial = {
   `,
   fragmentShader: `
     varying float vheight;
+    uniform float color_r;
+    uniform float color_g;
+    uniform float color_b;
+
 
     void main() {
-      gl_FragColor = vec4(.0, 0.4, 1.0, 1.);
+      gl_FragColor = vec4(color_r, color_g, color_b, 1.);
     }
   `,
 };
 
+const Scene = () => {
+  return <Particles />;
+};
+
 const Particles = () => {
   const ref = useRef(null);
+  const time = useRef(0);
+  const { camera } = useThree();
 
-  const { speed, wave } = useControls({
-    angle: {
-      options: ["top", "front"],
-      disabled: true,
-    },
-    speed: { value: 0.5, min: 0.1, max: 2, step: 0.01 },
-    wave: { value: 0.5, min: 0, max: 5, step: 0.01 },
-    dolly: { value: { x: 0, z: 0 }, joystick: "invertY", disabled: true },
+  const [cameraAngle, setCameraAngle] = useState("side");
+
+  const cameraPosRef = useRef({
+    z: 0,
+    x: 0,
+    y: -4,
+    rx: Math.PI * 0.5,
+    ry: 0,
+    rz: 0,
   });
 
-  useFrame((state) => {
-    const time = state.clock.getElapsedTime();
-    const playhead = time * speed;
+  const cameraPositions = {
+    top: { z: 5, x: 0, y: 0, rx: 0, ry: 0, rz: 0 },
+    side: {
+      z: 0,
+      x: -6,
+      y: 0,
+      rx: 0,
+      ry: -Math.PI * 0.5,
+      rz: Math.PI * 0.5,
+    },
+    front: {
+      z: 2,
+      x: 0,
+      y: -6,
+      rx: Math.PI * 0.45,
+      ry: 0,
+      rz: 0,
+    },
+  };
+
+  useSpring({
+    to: cameraPositions[cameraAngle],
+    onChange: ({ value }) => {
+      const newRefValue = {
+        z: value.z,
+        x: value.x,
+        y: value.y,
+        rx: value.rx,
+        ry: value.ry,
+        rz: value.rz,
+      };
+      cameraPosRef.current = newRefValue;
+    },
+  });
+
+  const [{ angle, animate, density, color, wave, speed, dolly }, set] =
+    useControls(() => ({
+      motion: folder({
+        animate: true,
+        speed: { value: 0.5 },
+        " ": buttonGroup({
+          "0.1x": () => set({ speed: 0.05 }),
+          "0.25x": () => set({ speed: 0.125 }),
+          "0.5x": () => set({ speed: 0.25 }),
+          "1x": () => set({ speed: 0.5 }),
+          "2x": () => set({ speed: 1 }),
+          "4x": () => set({ speed: 2 }),
+        }),
+
+        density: { value: 256, min: 64, max: 512, step: 1 },
+        wave: { value: 1, min: 0.05, max: 10, step: 0.01 },
+        color: { value: { r: 0, g: 119, b: 255 } },
+      }),
+      camera: folder({
+        angle: {
+          value: "side",
+          options: ["top", "front", "side"],
+          onChange: (angle) => {
+            setCameraAngle(angle);
+          },
+        },
+        dolly: { value: { x: 0, y: 0 }, joystick: "invertY" },
+      }),
+    }));
+  useFrame(() => {
+    const playhead = time.current;
+
+    if (animate) {
+      time.current = time.current + speed * 0.02;
+    }
     ref.current.material.uniforms.time.value = playhead;
     ref.current.material.uniforms.walk.value = [playhead, playhead];
     ref.current.material.uniforms.wave.value = wave;
+
+    ref.current.material.uniforms.color_r.value = color.r / 255;
+    ref.current.material.uniforms.color_g.value = color.g / 255;
+    ref.current.material.uniforms.color_b.value = color.b / 255;
+
+    const dollyXKey =
+      cameraAngle === "front" ? "x" : cameraAngle === "top" ? "x" : "y";
+    const dollyYKey =
+      cameraAngle === "front" ? "y" : cameraAngle === "top" ? "y" : "x";
+
+    camera.position.x = cameraPosRef.current.x + dolly[dollyXKey] * 48;
+    camera.position.y = cameraPosRef.current.y + dolly[dollyYKey] * 48;
+    camera.position.z = cameraPosRef.current.z;
+    camera.rotation.x = cameraPosRef.current.rx;
+    camera.rotation.y = cameraPosRef.current.ry;
+    camera.rotation.z = cameraPosRef.current.rz;
   });
 
   return (
-    <points
-      ref={ref}
-      rotation={[Math.PI * 0.58, 0, 0.1]}
-      position={[0, 0, 1]}
-      key="points"
-    >
-      <planeBufferGeometry
-        attach="geometry"
-        args={[12, 8, 256, 128]}
-        key="buffer"
-      />
-      <shaderMaterial
-        key="shader"
-        attach="material"
-        transparent
-        args={[ParticleShaderMaterial]}
-      />
-    </points>
+    <>
+      <points ref={ref} rotation={[0, 0, 0]} position={[0, 0, 0]} key="points">
+        <planeBufferGeometry
+          attach="geometry"
+          args={[12, 12, density, density]}
+          key="buffer"
+        />
+        <shaderMaterial
+          key="shader"
+          attach="material"
+          transparent
+          args={[ParticleShaderMaterial]}
+        />
+      </points>
+    </>
   );
 };
 
@@ -164,17 +260,16 @@ export const Hero = (props) => {
       }}
     >
       <PerspectiveCamera
-        key="camera"
-        position={[0, 0, 5]}
+        position={[0, -4, 1]}
         scale={1}
-        rotation={[0, 0, 0]}
+        rotation={[Math.PI * 0.5, 0, 0]}
         makeDefault
         near={0.1}
         far={1000}
         fov={75}
         {...props}
       />
-      <Particles key="particles" />
+      <Scene />
     </Canvas>
   );
 };
