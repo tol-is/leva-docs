@@ -7,9 +7,11 @@ import { AppProps } from "next/app";
 import withTwindApp from "@twind/next/shim/app";
 import twindConfig from "../twind.config";
 
-import { Hero } from "@components/hero";
+import { Hero } from "@components/Hero";
 import { Sidenav } from "@components/Sidenav";
-import { AppHeader, Container } from "@components/UI";
+import { AppHeader } from "@components/AppHeader";
+import { Container } from "@components/UI";
+import { useRouter } from "next/router";
 
 type Doc = {
   code: string;
@@ -22,11 +24,17 @@ type Doc = {
 interface LevaAppProps extends AppProps {}
 
 const LevaApp = ({ Component, pageProps }: LevaAppProps) => {
+  const router = useRouter();
+
+  const isHome = router.asPath === "/";
+
+  console.log(router.asPath);
+
   return (
     <div>
       <Hero />
       <AppHeader />
-      <Sidenav />
+      {!isHome && <Sidenav />}
       <Container>
         <Component {...pageProps} />
       </Container>
