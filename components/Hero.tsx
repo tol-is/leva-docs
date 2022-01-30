@@ -177,12 +177,12 @@ const Particles = () => {
         animate: true,
         speed: { value: 0.5 },
         " ": buttonGroup({
-          "0.1x": () => set({ speed: 0.05 }),
-          "0.25x": () => set({ speed: 0.125 }),
-          "0.5x": () => set({ speed: 0.25 }),
-          "1x": () => set({ speed: 0.5 }),
-          "2x": () => set({ speed: 1 }),
-          "4x": () => set({ speed: 2 }),
+          "0.1x": () => set({ speed: 0.03 }),
+          "0.25x": () => set({ speed: 0.075 }),
+          "0.5x": () => set({ speed: 0.15 }),
+          "1x": () => set({ speed: 0.3 }),
+          "2x": () => set({ speed: 0.6 }),
+          "4x": () => set({ speed: 0.9 }),
         }),
 
         density: { value: 256, min: 64, max: 512, step: 1 },
@@ -200,6 +200,27 @@ const Particles = () => {
         dolly: { value: { x: 0, y: 0 }, joystick: "invertY" },
       }),
     }));
+
+  useEffect(() => {
+    console.log(color);
+    const makeColor = (alpha) =>
+      `rgba(${color.r},${color.g},${color.b}, ${alpha})`;
+
+    document.documentElement.style.setProperty("--colors-accent", makeColor(1));
+    document.documentElement.style.setProperty(
+      "--leva-colors-accent1",
+      makeColor(1)
+    );
+    document.documentElement.style.setProperty(
+      "--leva-colors-accent2",
+      makeColor(0.9)
+    );
+    document.documentElement.style.setProperty(
+      "--leva-colors-accent3",
+      makeColor(0.8)
+    );
+  }, [color]);
+
   useFrame(() => {
     const playhead = time.current;
 

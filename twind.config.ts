@@ -3,26 +3,7 @@ import { css, Configuration } from "twind/css";
 export const twindConfig: Configuration = {
   mode: "silent",
   preflight: (preflight) => {
-    return css`
-      ${preflight}
-
-      html, body {
-        font-kerning: normal;
-        text-rendering: auto;
-      }
-
-      body {
-        overflow-x: hidden;
-        @apply font-body bg-grey-100 text-body text-base;
-      }
-      code {
-        font-feature-settings: "salt";
-      }
-
-      :focus {
-        outline: none;
-      }
-    `;
+    return css``;
   },
   theme: {
     screens: {

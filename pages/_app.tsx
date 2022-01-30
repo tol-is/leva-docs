@@ -1,5 +1,4 @@
 import "../styles/fonts.css";
-import "../styles/index.css";
 
 import NextApp from "next/app";
 import { AppProps } from "next/app";
@@ -12,6 +11,8 @@ import { Sidenav } from "@components/Sidenav";
 import { AppHeader } from "@components/AppHeader";
 import { Container } from "@components/UI";
 import { useRouter } from "next/router";
+
+import { globalStyles } from "@styles/global";
 
 type Doc = {
   code: string;
@@ -28,7 +29,7 @@ const LevaApp = ({ Component, pageProps }: LevaAppProps) => {
 
   const isHome = router.asPath === "/";
 
-  console.log(router.asPath);
+  globalStyles();
 
   return (
     <div>
