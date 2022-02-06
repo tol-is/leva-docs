@@ -1,8 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-import withTwindDocument from "@twind/next/shim/document";
-import { twindConfig } from "../twind.config";
-
 import { getCssText } from "@styles/stitches.config";
 
 class LevaDoc extends Document {
@@ -33,4 +30,4 @@ class LevaDoc extends Document {
   }
 }
 
-export default withTwindDocument(twindConfig, LevaDoc);
+export default LevaDoc;

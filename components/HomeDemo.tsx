@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { PerspectiveCamera } from "@react-three/drei";
 import { useSpring } from "react-spring";
 
-import { buttonGroup, folder, monitor, useControls } from "leva";
+import { buttonGroup, folder, useControls } from "leva";
 
 const ParticleShaderMaterial = {
   uniforms: {
@@ -116,15 +115,10 @@ const ParticleShaderMaterial = {
   `,
 };
 
-const Scene = () => {
-  return <Particles />;
-};
-
-const Particles = () => {
+const Particles = ({ store }) => {
   const ref = useRef(null);
   const time = useRef(0);
   const { camera } = useThree();
-
   const [cameraAngle, setCameraAngle] = useState("side");
 
   const cameraPosRef = useRef({
@@ -171,8 +165,8 @@ const Particles = () => {
     },
   });
 
-  const [{ angle, animate, density, color, wave, speed, dolly }, set] =
-    useControls(() => ({
+  const [{ animate, density, color, wave, speed, dolly }, set] = useControls(
+    () => ({
       motion: folder({
         animate: true,
         speed: { value: 0.5 },
@@ -199,10 +193,11 @@ const Particles = () => {
         },
         dolly: { value: { x: 0, y: 0 }, joystick: "invertY" },
       }),
-    }));
+    }),
+    { store: store }
+  );
 
   useEffect(() => {
-    console.log(color);
     const makeColor = (alpha) =>
       `rgba(${color.r},${color.g},${color.b}, ${alpha})`;
 
@@ -267,7 +262,7 @@ const Particles = () => {
   );
 };
 
-export const Hero = (props) => {
+export const HomeDemo = ({ store, ...rest }) => {
   return (
     <Canvas
       key="canvas"
@@ -280,17 +275,7 @@ export const Hero = (props) => {
         width: "100vw",
       }}
     >
-      <PerspectiveCamera
-        position={[0, -4, 1]}
-        scale={1}
-        rotation={[Math.PI * 0.5, 0, 0]}
-        makeDefault
-        near={0.1}
-        far={1000}
-        fov={75}
-        {...props}
-      />
-      <Scene />
+      <Particles store={store} />;
     </Canvas>
   );
 };

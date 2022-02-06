@@ -1,27 +1,18 @@
 import "../styles/fonts.css";
+import "../styles/reset.css";
 
 import NextApp from "next/app";
 import { AppProps } from "next/app";
 
-import withTwindApp from "@twind/next/shim/app";
-import twindConfig from "../twind.config";
-
-import { Hero } from "@components/Hero";
 import { Sidenav } from "@components/Sidenav";
 import { AppHeader } from "@components/AppHeader";
-import { Container } from "@components/UI";
+
 import { useRouter } from "next/router";
 
 import { globalStyles } from "@styles/global";
 
-type Doc = {
-  code: string;
-  frontmatter: {
-    title: string;
-    description: string;
-    order: number;
-  };
-};
+import { Main } from "@components/UI";
+
 interface LevaAppProps extends AppProps {}
 
 const LevaApp = ({ Component, pageProps }: LevaAppProps) => {
@@ -32,14 +23,13 @@ const LevaApp = ({ Component, pageProps }: LevaAppProps) => {
   globalStyles();
 
   return (
-    <div>
-      <Hero />
+    <>
       <AppHeader />
       {!isHome && <Sidenav />}
-      <Container>
+      <Main>
         <Component {...pageProps} />
-      </Container>
-    </div>
+      </Main>
+    </>
   );
 };
 
@@ -48,4 +38,4 @@ LevaApp.getInitialProps = async (appContext) => {
   return { ...appProps };
 };
 
-export default withTwindApp(twindConfig, LevaApp);
+export default LevaApp;

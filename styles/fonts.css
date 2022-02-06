@@ -1,4 +1,37 @@
 @font-face {
+  font-family: "IIIncrementsSans";
+  src: url("/fonts/increment/ii-increments-sans-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IIIncrementsSans";
+  src: url("/fonts/increment/ii-increments-sans-bold-oblique.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IIIncrementsSans";
+  src: url("/fonts/increment/ii-increments-sans-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IIIncrementsSans";
+  src: url("/fonts/increment/ii-increments-sans-oblique.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Averta PE";
   font-display: swap;
   font-weight: 400;

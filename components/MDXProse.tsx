@@ -9,6 +9,7 @@ const rhythm = css`
   h5 {
     @apply text-grey-30;
   }
+
   p,
   ul {
     @apply text-grey-30;

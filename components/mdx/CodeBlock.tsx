@@ -1,5 +1,4 @@
 import React from "react";
-import { tw } from "twind";
 import Highlight, { defaultProps, PrismTheme } from "prism-react-renderer";
 
 const codeTheme = {
@@ -50,7 +49,7 @@ export const CodeBlock = ({ code, language }) => {
       theme={codeTheme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={tw(className)} style={style}>
+        <pre className={className} style={style}>
           {tokens.map((line, i) => {
             const { style, ...rest } = getLineProps({ line, key: i });
             return (

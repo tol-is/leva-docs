@@ -1,4 +1,5 @@
 const withTM = require("next-transpile-modules")([]);
+const withPlugins = require("next-compose-plugins");
 
 const config = {
   reactStrictMode: true,
@@ -18,4 +19,14 @@ const config = {
   },
 };
 
-module.exports = withTM(config);
+module.exports = withPlugins([withTM(config)], {
+  async redirects() {
+    return [
+      {
+        source: "/docs",
+        destination: "/docs/installation",
+        permanent: true,
+      },
+    ];
+  },
+});

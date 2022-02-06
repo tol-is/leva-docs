@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import Link from "next/link";
-import { tw } from "twind";
-import { slugify } from "@lib/slug";
+import NextLink from "next/link";
+import * as ScrollArea from "@radix-ui/react-scroll-area";
 
 import map from "@lib/doc-routes.json";
 
-import * as ScrollArea from "@radix-ui/react-scroll-area";
+import { styled } from "@styles/stitches.config";
+import { Span } from "./Text";
+import { Box } from "./UI";
 
 type TDoc = {
   title: string;
@@ -22,6 +23,45 @@ type TDocSection = {
   id: string;
 };
 
+const StyledSidenav = styled("nav", {
+  display: "none",
+  position: "fixed",
+  zIndex: 10,
+  left: 0,
+  top: 0,
+  bottom: 0,
+  width: "$sidenav",
+  "@sm": {
+    display: "block",
+  },
+});
+
+const ScrollRoot = styled(ScrollArea.Root, {
+  position: "absolute",
+  height: "100%",
+});
+
+const ScrollViewport = styled(ScrollArea.Viewport, {
+  position: "absolute",
+  height: "100%",
+});
+
+const NavRoot = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+  justifyContent: "center",
+
+  padding: "$12 $4 $12 $4",
+  "@sm": {
+    padding: "$12 $6 $12 $6",
+  },
+  "@md": {
+    paddingTop: "$13",
+    paddingBottom: "$13",
+  },
+});
+
 const SidenavLink = ({ heading, id, parentSlug }) => {
   const [hover, setHover] = useState(false);
   const onOver = () => {
@@ -34,44 +74,37 @@ const SidenavLink = ({ heading, id, parentSlug }) => {
   const href = id ? `${parentSlug}/#${id}` : `${parentSlug}`;
 
   return (
-    <Link href={href}>
-      <a
-        className="relative py-0.5 my-px flex items-center  justify-start group border-b-1 border-transparent focus:(border-white) hover:(border-b-1 border-white)"
-        onMouseOver={onOver}
-        onMouseOut={onOut}
-      >
-        <span className={tw("block mt-0.5", "relative z-10 text-sm")}>
+    <NextLink href={href} passHref>
+      <a onMouseOver={onOver} onMouseOut={onOut}>
+        <Span size={2} css={{ display: "block" }}>
           {heading}
-        </span>
+        </Span>
       </a>
-    </Link>
+    </NextLink>
   );
 };
 
 export const Sidenav = () => {
   const sidenav = map as unknown as TDoc[];
   return (
-    <div className="hidden md:block fixed z-10 left-0 top-10 bottom-0 w-48">
-      <ScrollArea.Root className="absolute h-full">
-        <ScrollArea.Viewport className="absolute h-full">
-          <div className="flex flex-col justify-center items-start space-y-5 px-5 py-10">
+    <StyledSidenav>
+      <ScrollRoot>
+        <ScrollViewport>
+          <NavRoot>
             {sidenav.map((doc) => (
-              <div className="flex flex-col items-start">
+              <Box>
                 {doc.toc.map((section) => (
                   <SidenavLink {...section} parentSlug={doc.slug} />
                 ))}
-              </div>
+              </Box>
             ))}
-          </div>
-        </ScrollArea.Viewport>
-        <ScrollArea.Scrollbar orientation="horizontal">
-          <ScrollArea.Thumb />
-        </ScrollArea.Scrollbar>
+          </NavRoot>
+        </ScrollViewport>
         <ScrollArea.Scrollbar orientation="vertical">
           <ScrollArea.Thumb />
         </ScrollArea.Scrollbar>
         <ScrollArea.Corner />
-      </ScrollArea.Root>
-    </div>
+      </ScrollRoot>
+    </StyledSidenav>
   );
 };

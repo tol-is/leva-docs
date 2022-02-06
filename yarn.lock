@@ -1439,6 +1439,11 @@
   dependencies:
     mathjs "^10.0.0"
 
+"@modulz/radix-icons@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@modulz/radix-icons/-/radix-icons-4.0.0.tgz#628a7826a4569dd2e3331e266d8d2e26c7d6753c"
+  integrity sha512-d79T4cYvMGMocVC/q1WiMO578FPFfUoxmXIkduc8cUQAPDr7thuEV5HrCHhqqqkoVaYD0QPct180ilcNUyGPrg==
+
 "@napi-rs/triples@1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@napi-rs/triples/-/triples-1.0.3.tgz#76d6d0c3f4d16013c61e45dfca5ff1e6c31ae53c"
@@ -1624,6 +1629,11 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
+"@radix-ui/react-icons@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-icons/-/react-icons-1.0.3.tgz#4ef61f1234f44991f7a19e108f77ca37032b4be2"
+  integrity sha512-YbPAUZwTsvF/2H7IU35txaLUB+JNSV8GIhnswlqiFODP/P32t5op5keYUvQWsSj9TA0VLF367J24buUjIprn0w==
+
 "@radix-ui/react-id@0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-id/-/react-id-0.1.4.tgz#4cd6126e6ac8a43ebe6d52948a068b797cc9ad71"
@@ -1697,7 +1707,7 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-compose-refs" "0.1.0"
 
-"@radix-ui/react-tooltip@0.1.6":
+"@radix-ui/react-tooltip@0.1.6", "@radix-ui/react-tooltip@^0.1.6":
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-tooltip/-/react-tooltip-0.1.6.tgz#46a3e385e004aaebd16ecaa1da7d1af70ba3bb45"
   integrity sha512-0uaRpRmTCQo5yMUkDpv4LEDnaQDoeLXcNNhZonCZdbZBQ7ntvjURIWIigq1/pXZp0UX7oPpFzsXD9jUp8JT0WA==
@@ -9232,6 +9242,11 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+
+next-compose-plugins@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.2.1.tgz#020fc53f275a7e719d62521bef4300fbb6fde5ab"
+  integrity sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==
 
 next-tick@~1.0.0:
   version "1.0.0"

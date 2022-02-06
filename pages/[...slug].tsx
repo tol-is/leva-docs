@@ -5,6 +5,8 @@ import Head from "next/head";
 
 import { getDocBySlug, getWebsiteSlugs } from "@lib/mdx";
 import { MDXRenderer } from "@components/MDXRenderer";
+import { Container, WrapperPageDoc } from "@components/UI";
+
 import { Article } from "@components/UI";
 
 export default function Page({ post }) {
@@ -24,9 +26,11 @@ export default function Page({ post }) {
           <Head>
             <title>Leva | {post.frontmatter.title}</title>
           </Head>
-          <Article>
-            <MDXRenderer code={post.code} />
-          </Article>
+          <WrapperPageDoc>
+            <Container size="doc">
+              <MDXRenderer code={post.code} />
+            </Container>
+          </WrapperPageDoc>
         </>
       )}
     </>

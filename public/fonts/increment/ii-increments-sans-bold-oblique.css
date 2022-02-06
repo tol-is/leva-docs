@@ -1,0 +1,27 @@
+/*
+Font: 		II Increments Sans
+Style: 		Bold Oblique
+URL: 		https://www.youworkforthem.com/font/T14824/ii-increments-sans
+Foundry: 	Evan Lelliott
+Foundry: 	https://www.youworkforthem.com/designer/1463/evan-lelliott
+Copyright:	
+Version: 	17
+Created:	September 28, 2021
+License: 	https://www.youworkforthem.com/font-license 
+License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
+			WebFont license rules. All other parties are strictly restricted 
+			from using the WebFonts(s) listed without a purchased license. 
+			All details above must always remain unaltered and visible in your CSS.
+*/
+
+@font-face {
+	font-family: 'IIIncrementsSansBoldOblique';
+	src: url('ii-increments-sans-bold-oblique.eot');
+	src: url('ii-increments-sans-bold-oblique.eot?#iefix') format('embedded-opentype'),
+             url('ii-increments-sans-bold-oblique.woff2') format('woff2'),
+	     url('ii-increments-sans-bold-oblique.woff') format('woff'),
+	     url('ii-increments-sans-bold-oblique.ttf') format('truetype'),
+	     url('ii-increments-sans-bold-oblique.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

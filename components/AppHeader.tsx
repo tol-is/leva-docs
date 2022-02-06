@@ -4,15 +4,59 @@ import Link from "next/link";
 
 import { styled } from "@styles/stitches.config";
 
-const LevaLogo = styled("a", {
+const StyledHeader = styled("header", {
+  position: "fixed",
+  padding: "$5 $4 $3 $4",
+  width: "100%",
+  display: "flex",
+  zIndex: "20",
+  top: 0,
+  background: "$grey100",
+  flexDirection: "column",
+  "@sm": {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  "@md": {
+    padding: "$5 $6 $5 $6",
+  },
+});
+
+const HomeLink = styled("a", {
   color: "$accent",
+  "@xs": {
+    marginTop: "-$semi",
+  },
+});
+
+const HeaderLink = styled("a", {
+  color: "$grey40",
+  fontFamily: "$mono",
+  fontSize: "13px",
+  "&:hover": {
+    color: "$grey10",
+    textDecoration: "underline",
+  },
+});
+
+const HeaderNavList = styled("ul", {
+  display: "flex",
+  listStyle: "none",
+  margin: "$3 $0 $0 $0",
+  padding: 0,
+  "@sm": {
+    margin: "$0 $0 $0 $4",
+  },
+  "> li + li": {
+    marginLeft: "$4",
+  },
 });
 
 export const AppHeader = () => {
   return (
-    <div className="fixed left-0 top-0 h-10 px-6 flex items-center bg-grey-100 w-full">
-      <Link href="/">
-        <LevaLogo>
+    <StyledHeader>
+      <Link href="/" passHref>
+        <HomeLink>
           <svg
             width="52"
             height="15"
@@ -37,8 +81,36 @@ export const AppHeader = () => {
               d="M36.8678 15H40.8928L41.6928 12.675H46.9178L47.7178 15H51.7678L46.1428 0.450012H42.4678L36.8678 15ZM42.7178 9.52501L44.2678 4.90001H44.3178L45.8678 9.52501H42.7178Z"
             />
           </svg>
-        </LevaLogo>
+        </HomeLink>
       </Link>
-    </div>
+      <HeaderNavList>
+        <li>
+          <Link href="/docs" passHref>
+            <HeaderLink>DOCS</HeaderLink>
+          </Link>
+        </li>
+        <li>
+          <Link href="/examples" passHref>
+            <HeaderLink>EXAMPLES</HeaderLink>
+          </Link>
+        </li>
+        <li>
+          <HeaderLink
+            href="https://github.com/pmndrs/leva"
+            rel="noopener noreferrer"
+          >
+            GITHUB
+          </HeaderLink>
+        </li>
+        <li>
+          <HeaderLink
+            href="https://github.com/pmndrs/leva"
+            rel="noopener noreferrer"
+          >
+            DISCORD
+          </HeaderLink>
+        </li>
+      </HeaderNavList>
+    </StyledHeader>
   );
 };
