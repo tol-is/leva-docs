@@ -101,7 +101,7 @@ export const Td = styled("td", {
     borderBottom: "1px solid $grey60",
     padding: "$3 $1",
     "&:before": {
-      display: "0",
+      display: "none",
     },
   },
 });
