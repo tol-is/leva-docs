@@ -13,9 +13,9 @@ import {
   monitor,
 } from "leva";
 
-import { MDXProse } from "./MDXProse";
+import { MDXProse } from "./mdx/MDXProse";
 
-import { MDXComponents } from "./MDXComponents";
+import { MDXComponents } from "./mdx/MDXComponents";
 
 export const MDXRenderer: React.FC<{ code: string }> = ({ code }) => {
   const Component = useMemo(

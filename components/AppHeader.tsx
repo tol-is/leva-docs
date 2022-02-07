@@ -30,11 +30,13 @@ const HomeLink = styled("a", {
 });
 
 const HeaderLink = styled("a", {
-  color: "$grey40",
+  color: "$loContrast",
   fontFamily: "$mono",
-  fontSize: "13px",
+  fontSize: "$1",
+  textDecoration: "none",
+  textTransform: "uppercase",
   "&:hover": {
-    color: "$grey10",
+    color: "$hiContrast",
     textDecoration: "underline",
   },
 });
@@ -85,29 +87,31 @@ export const AppHeader = () => {
       </Link>
       <HeaderNavList>
         <li>
-          <Link href="/docs" passHref>
-            <HeaderLink>DOCS</HeaderLink>
+          <Link href="/docs/intro" passHref>
+            <HeaderLink>Docs</HeaderLink>
           </Link>
         </li>
         <li>
           <Link href="/examples" passHref>
-            <HeaderLink>EXAMPLES</HeaderLink>
+            <HeaderLink>Examples</HeaderLink>
           </Link>
         </li>
         <li>
           <HeaderLink
             href="https://github.com/pmndrs/leva"
             rel="noopener noreferrer"
+            target="_blank"
           >
-            GITHUB
+            Github
           </HeaderLink>
         </li>
         <li>
           <HeaderLink
             href="https://github.com/pmndrs/leva"
             rel="noopener noreferrer"
+            target="_blank"
           >
-            DISCORD
+            Discord
           </HeaderLink>
         </li>
       </HeaderNavList>

@@ -2,29 +2,29 @@ import { LevaPanel } from "leva";
 import React from "react";
 import NextLink from "next/link";
 
-import { Span } from "./Text";
+import { Display1 } from "./Text";
 import { CodeCopy } from "./CodeCopy";
-import { Box, Flex, Container, PrimaryCta } from "./UI";
+import { Box, Flex, Container } from "./UI";
+import { PrimaryCta } from "./Actions";
 
 export const HomeIntro = ({ store }) => {
   return (
     <Container size="home" as="section" css={{ position: "relative" }}>
-      <Span
-        bold
-        as="h1"
-        size={{ "@initial": 8, "@sm": 9, "@lg": 10 }}
-        css={{ display: "block", maxWidth: "25ch" }}
-      >
+      <Display1 as="h1" css={{ maxWidth: "25ch", color: "$hiContrast" }}>
         The most powerfull parametric GUI for react applications and rich
         interactive experiences.
-      </Span>
+      </Display1>
 
       <Flex
         css={{ marginTop: "$8" }}
         direction={{ "@initial": "column", "@xs": "row" }}
       >
-        <CodeCopy />
-        <NextLink href="/docs" passHref>
+        <CodeCopy
+          prefix="npm"
+          text="npm install leva"
+          label="Copy the install snippet to Clipboard"
+        />
+        <NextLink href="/docs/intro" passHref>
           <PrimaryCta
             css={{
               marginTop: "$2",

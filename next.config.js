@@ -24,7 +24,7 @@ module.exports = withPlugins([withTM(config)], {
     return [
       {
         source: "/docs",
-        destination: "/docs/installation",
+        destination: "/docs/intro",
         permanent: true,
       },
     ];

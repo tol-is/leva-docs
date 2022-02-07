@@ -16,8 +16,7 @@ export const Container = styled("div", {
         maxWidth: "80rem",
       },
       doc: {
-        maxWidth: "60rem",
-        background: "rgba(0,0,0,1)",
+        maxWidth: "64rem",
       },
     },
   },
@@ -25,26 +24,17 @@ export const Container = styled("div", {
 
 export const WrapperPageDoc = styled("div", {
   margin: "$0",
-  padding: "$0",
+  padding: "$11 $0",
   // maxWidth: "1600px",
-  "@md": {
+  "@lg": {
     paddingLeft: "$sidenav",
   },
-});
-
-export const Article = ({ children }) => {
-  return <article>{children}</article>;
-};
-
-export const Main = styled("main", {
-  paddingTop: "$12",
-  paddingBottom: "$12",
-
-  "@md": {
-    paddingTop: "$13",
-    paddingBottom: "$13",
+  "@xl": {
+    paddingRight: "$sidenav",
   },
 });
+
+export const Main = styled("main", { flex: 1 });
 
 export const Flex = styled("div", {
   display: "flex",
@@ -61,56 +51,27 @@ export const Flex = styled("div", {
 });
 
 export const Grid = styled("div", {
+  display: "grid",
   variants: {
     columns: {
       1: {
-        gridTemplateColumns:
-          "grid-template-columns: repeat(1, minmax(0px, 1fr));",
+        gridTemplateColumns: "repeat(1, minmax(0px, 1fr))",
       },
       2: {
-        gridTemplateColumns:
-          "grid-template-columns: repeat(2, minmax(0px, 1fr));",
+        gridTemplateColumns: "repeat(2, minmax(0px, 1fr))",
       },
       3: {
-        gridTemplateColumns:
-          "grid-template-columns: repeat(3, minmax(0px, 1fr));",
+        gridTemplateColumns: "repeat(3, minmax(0px, 1fr))",
       },
       4: {
-        gridTemplateColumns:
-          "grid-template-columns: repeat(4, minmax(0px, 1fr));",
+        gridTemplateColumns: "repeat(4, minmax(0px, 1fr))",
       },
       5: {
-        gridTemplateColumns:
-          "grid-template-columns: repeat(5, minmax(0px, 1fr));",
+        gridTemplateColumns: "repeat(5, minmax(0px, 1fr))",
       },
       6: {
-        gridTemplateColumns:
-          "grid-template-columns: repeat(6, minmax(0px, 1fr));",
+        gridTemplateColumns: "repeat(6, minmax(0px, 1fr))",
       },
     },
-  },
-});
-
-export const IconButton = styled("button", {
-  background: "transparent",
-  border: "none",
-  color: "$hiContrast",
-  padding: "$1 $2",
-});
-
-export const PrimaryCta = styled("a", {
-  display: "flex",
-  alignItems: "center",
-  background: "$accent",
-  color: "$hiContrast",
-  padding: "$0 $5",
-  height: "$7",
-  border: "$0",
-  fontFamily: "$mono",
-  fontSize: "$2",
-  lineHeight: 1,
-  textDecoration: "none",
-  "&:hover": {
-    background: "$grey100",
   },
 });

@@ -3,14 +3,12 @@ import "../styles/reset.css";
 
 import NextApp from "next/app";
 import { AppProps } from "next/app";
+import { useRouter } from "next/router";
 
 import { Sidenav } from "@components/Sidenav";
 import { AppHeader } from "@components/AppHeader";
-
-import { useRouter } from "next/router";
-
+import { AppFooter } from "@components/AppFooter";
 import { globalStyles } from "@styles/global";
-
 import { Main } from "@components/UI";
 
 interface LevaAppProps extends AppProps {}
@@ -29,6 +27,7 @@ const LevaApp = ({ Component, pageProps }: LevaAppProps) => {
       <Main>
         <Component {...pageProps} />
       </Main>
+      <AppFooter />
     </>
   );
 };

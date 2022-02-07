@@ -4,15 +4,17 @@ import NextLink from "next/link";
 import { CopyIcon, CheckIcon } from "@modulz/radix-icons";
 import copy from "copy-to-clipboard";
 
-import { Box, Flex, IconButton } from "./UI";
+import { Box, Flex } from "./UI";
+import { IconButton } from "./Actions";
 import { Tooltip } from "./Tooltip";
 
-export const CodeCopy = () => {
+export const CodeCopy = ({ prefix = null, text, label }) => {
   const [hasCopied, setHasCopied] = React.useState(false);
 
   return (
-    <Flex
+    <Box
       css={{
+        display: "inline-flex",
         background: "$grey100",
         alignItems: "center",
         padding: "0 $2 0 $3",
@@ -29,23 +31,23 @@ export const CodeCopy = () => {
           padding: "$0",
         }}
       >
-        npm install leva
+        {prefix ? `${prefix}: ${text}` : text}
       </Box>
       <Tooltip content="Copy to Clipboard">
         <IconButton
-          aria-label="Copy the install snippet to Clipboard"
+          aria-label={label}
           onClick={() => {
-            copy("npm install leva");
+            copy(text);
             setHasCopied(true);
           }}
           css={{
-            marginTop: "$1",
+            marginTop: "$semi",
             appearance: "none",
           }}
         >
           {hasCopied ? <CheckIcon /> : <CopyIcon />}
         </IconButton>
       </Tooltip>
-    </Flex>
+    </Box>
   );
 };

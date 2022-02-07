@@ -17,17 +17,25 @@ blockquote,
 dl,
 dd,
 ul,
-li {
+li,
+pre {
   margin: 0;
 }
 
 ul,
 ol {
   list-style: none;
+  padding: 0;
 }
 
 body {
   min-height: 100vh;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 button {
@@ -46,6 +54,13 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+pre,
+code {
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-break: keep-all;
 }
 
 @media (prefers-reduced-motion: reduce) {

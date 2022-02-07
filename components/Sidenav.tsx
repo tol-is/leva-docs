@@ -5,8 +5,7 @@ import * as ScrollArea from "@radix-ui/react-scroll-area";
 import map from "@lib/doc-routes.json";
 
 import { styled } from "@styles/stitches.config";
-import { Span } from "./Text";
-import { Box } from "./UI";
+import { Box, Flex } from "./UI";
 
 type TDoc = {
   title: string;
@@ -31,7 +30,8 @@ const StyledSidenav = styled("nav", {
   top: 0,
   bottom: 0,
   width: "$sidenav",
-  "@sm": {
+  background: "$grey80",
+  "@lg": {
     display: "block",
   },
 });
@@ -51,35 +51,39 @@ const NavRoot = styled("div", {
   flexDirection: "column",
   alignItems: "flex-start",
   justifyContent: "center",
-
-  padding: "$12 $4 $12 $4",
+  padding: "$11 $4 $11 $4",
   "@sm": {
-    padding: "$12 $6 $12 $6",
-  },
-  "@md": {
-    paddingTop: "$13",
-    paddingBottom: "$13",
+    padding: "$11 $6 $11 $6",
   },
 });
 
-const SidenavLink = ({ heading, id, parentSlug }) => {
-  const [hover, setHover] = useState(false);
-  const onOver = () => {
-    setHover(true);
-  };
+const StyledNavLink = styled("a", {
+  fontFamily: "$mono",
+  fontSize: "$2",
+  color: "$loContrast",
+  textDecoration: "none",
+  padding: "$1 0",
+  display: "block",
+  "&:hover": {
+    color: "$hiContrast",
+    textDecoration: "underline",
+  },
 
-  const onOut = () => {
-    setHover(false);
-  };
+  variants: {
+    level: {
+      1: {
+        fontWeight: 700,
+      },
+    },
+  },
+});
+
+const SidenavLink = ({ heading, id, level, parentSlug }) => {
   const href = id ? `${parentSlug}/#${id}` : `${parentSlug}`;
 
   return (
     <NextLink href={href} passHref>
-      <a onMouseOver={onOver} onMouseOut={onOut}>
-        <Span size={2} css={{ display: "block" }}>
-          {heading}
-        </Span>
-      </a>
+      <StyledNavLink level={level}>{heading}</StyledNavLink>
     </NextLink>
   );
 };
@@ -91,13 +95,23 @@ export const Sidenav = () => {
       <ScrollRoot>
         <ScrollViewport>
           <NavRoot>
-            {sidenav.map((doc) => (
-              <Box>
-                {doc.toc.map((section) => (
-                  <SidenavLink {...section} parentSlug={doc.slug} />
-                ))}
-              </Box>
-            ))}
+            <Box
+              css={{
+                "ul + ul": {
+                  marginTop: "$6",
+                },
+              }}
+            >
+              {sidenav.map((doc) => (
+                <Flex direction="column" as="ul">
+                  {doc.toc.map((section) => (
+                    <li key={`${doc.slug}-${section.id}`}>
+                      <SidenavLink {...section} parentSlug={doc.slug} />
+                    </li>
+                  ))}
+                </Flex>
+              ))}
+            </Box>
           </NavRoot>
         </ScrollViewport>
         <ScrollArea.Scrollbar orientation="vertical">

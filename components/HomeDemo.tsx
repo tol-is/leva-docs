@@ -181,7 +181,7 @@ const Particles = ({ store }) => {
 
         density: { value: 256, min: 64, max: 512, step: 1 },
         wave: { value: 1, min: 0.05, max: 10, step: 0.01 },
-        color: { value: { r: 0, g: 119, b: 255 } },
+        color: { value: { r: 0, g: 123, b: 255 } },
       }),
       camera: folder({
         angle: {

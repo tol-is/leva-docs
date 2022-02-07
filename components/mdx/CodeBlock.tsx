@@ -1,5 +1,6 @@
 import React from "react";
 import Highlight, { defaultProps, PrismTheme } from "prism-react-renderer";
+import { styled } from "@styles/stitches.config";
 
 const codeTheme = {
   plain: {
@@ -18,12 +19,7 @@ const codeTheme = {
         color: "#535a6a",
       },
     },
-    {
-      types: ["string", "number", "builtin", "variable", "boolean"],
-      style: {
-        color: "#077BFF",
-      },
-    },
+
     {
       types: [
         "keyword",
@@ -40,6 +36,18 @@ const codeTheme = {
   ],
 } as PrismTheme;
 
+const Pre = styled("pre", {
+  fontSize: "$2",
+  "@sm": {
+    fontSize: "$3",
+  },
+  lineHeight: 1.3,
+  "& .token.string, .token.number, .token.builtin, .token.variable, .token.boolean":
+    {
+      color: "$accent",
+    },
+});
+
 export const CodeBlock = ({ code, language }) => {
   return (
     <Highlight
@@ -49,7 +57,7 @@ export const CodeBlock = ({ code, language }) => {
       theme={codeTheme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
+        <Pre className={className} style={style}>
           {tokens.map((line, i) => {
             const { style, ...rest } = getLineProps({ line, key: i });
             return (
@@ -66,7 +74,7 @@ export const CodeBlock = ({ code, language }) => {
               </div>
             );
           })}
-        </pre>
+        </Pre>
       )}
     </Highlight>
   );

@@ -3,24 +3,23 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
 
-import { getDocBySlug, getWebsiteSlugs } from "@lib/mdx";
+import { getDocBySlug, getDocsSlugs } from "@lib/mdx";
 import { MDXRenderer } from "@components/MDXRenderer";
-import { Container, WrapperPageDoc } from "@components/UI";
-
-import { Article } from "@components/UI";
+import { Box, Container, WrapperPageDoc } from "@components/UI";
+import { Loading } from "@components/Loading";
+import { Intro } from "@components/Intro";
 
 export default function Page({ post }) {
   const router = useRouter();
 
-  // console.log(post.slug);
-  // if (!router.isFallback && !post) {
-  //   return <ErrorPage statusCode={404} title="NotFound" />;
-  // }
+  if (!router.isFallback && !post) {
+    return <ErrorPage statusCode={404} title="NotFound" />;
+  }
 
   return (
     <>
       {router.isFallback ? (
-        <h1>Loading…</h1>
+        <Loading />
       ) : (
         <>
           <Head>
@@ -28,7 +27,20 @@ export default function Page({ post }) {
           </Head>
           <WrapperPageDoc>
             <Container size="doc">
-              <MDXRenderer code={post.code} />
+              <Intro
+                title={post.frontmatter.title}
+                description={post.frontmatter.description}
+              />
+              <Box
+                css={{
+                  marginTop: "$8",
+                  "@sm": {
+                    marginTop: "$10",
+                  },
+                }}
+              >
+                <MDXRenderer code={post.code} />
+              </Box>
             </Container>
           </WrapperPageDoc>
         </>
@@ -40,8 +52,6 @@ export default function Page({ post }) {
 export async function getStaticProps({ params }) {
   const post = await getDocBySlug(params.slug.join("/"));
 
-  // console.log(params);
-  // console.log(post ? post.frontmatter : "NOT FOUND?");
   return {
     props: {
       post: post || null,
@@ -51,7 +61,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const pageSlugs = await getWebsiteSlugs();
+  const pageSlugs = await getDocsSlugs();
   return {
     paths: pageSlugs || [],
     fallback: true,

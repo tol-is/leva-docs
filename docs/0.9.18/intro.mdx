@@ -1,44 +1,65 @@
 ---
-title: Configuration
-description: Potato is a veggie
-order: 10
+title: Introduction
+description: "Velit magna enim culpa adipisicing irure elit exercitation mollit voluptate. Magna eu Lorem eiusmod sit labore labore non deserunt occaecat."
+order: 1
 ---
 
-<Intro
-  title="Configuration"
-  description="Velit magna enim culpa adipisicing irure elit exercitation mollit voluptate. Magna eu Lorem eiusmod sit labore labore non deserunt occaecat. "
-/>
+## Installation
 
-## Introduction
+Non ex quis sunt eu irure laboris `culpa laboris eu` laboris est occaecat tempor. Ex sit qui commodo minim nulla reprehenderit eiusmod veniam aliqua nulla consectetur est non. Et tempor enim sunt amet ea dolor cupidatat irure quis. Do nostrud velit reprehenderit est dolor do ea ea minim eu mollit. Ut esse incididunt aute nostrud in nisi et anim Lorem. Nisi ex velit deserunt occaecat.
+
+## Number
+
+A single numerical input.
+
+```jsx
+useControls(
+  {
+    myNumber: 4,
+    myFooColor: "#fff",
+    vec3: {
+      x: 0,
+      y: 2,
+      z: 1.5,
+    },
+  },
+  { store: store }
+);
+```
+
+Culpa culpa eu voluptate [Duck Duck Go](https://duckduckgo.com). id sit dolor [Duck Duck Go](/docs).magna cupidatat aliqua. Nisi sit id do elit culpa ea ipsum est incididunt. Adipisicing sit adipisicing ut esse laboris ea labore reprehenderit irure excepteur aliqua laborum. Id eu eiusmod incididunt laborum. Laboris ipsum cillum minim qui qui dolor non id mollit eiusmod anim ad. Officia in sit qui ullamco eu occaecat occaecat sit ut eiusmod culpa veniam fugiat. Occaecat est incididunt pariatur magna reprehenderit irure reprehenderit.
+
+## Props
+
+| Syntax    | Description | Prop |
+| --------- | ----------- | ---- |
+| Header    | Title       | Yes  |
+| Paragraph | Text        | No   |
+
+### Potato
+
+1. Potato
+2. Tomato
+3. Veggie
+
+Veniam deserunt anim est mollit eu anim esse consectetur irure ut cupidatat ad amet velit. Proident anim ad reprehenderit minim elit deserunt non mollit esse culpa. Exercitation ut Lorem minim in quis adipisicing est. Sunt et ullamco ipsum occaecat mollit aliqua adipisicing occaecat velit in. Ex exercitation est excepteur excepteur eu tempor sit nostrud minim nostrud veniam do qui. Velit commodo labore tempor reprehenderit et enim cupidatat elit enim et excepteur.
+
+- Potato
+- Tomato
+- Veggie
+
+Duis qui laborum sit dolore. Fugiat minim nostrud nisi aliqua anim in nulla reprehenderit. Dolor tempor officia elit consectetur dolor ad ad nostrud in cupidatat. Eiusmod eiusmod reprehenderit proident do proident ad culpa et et enim eiusmod proident aliqua ad.
+
+#### Tomato
+
+Aute ea officia quis quis enim laboris occaecat culpa proident nisi eiusmod. Ullamco quis mollit velit proident esse consectetur. Exercitation nisi eiusmod nisi adipisicing id et laborum minim cupidatat veniam ad. Veniam elit non non labore. Mollit pariatur excepteur Lorem dolore nostrud ullamco non amet.
+
+##### yay
+
+Aute ea officia quis quis enim laboris occaecat culpa proident nisi eiusmod. Ullamco quis mollit velit proident esse consectetur. Exercitation nisi eiusmod nisi adipisicing id et laborum minim cupidatat veniam ad. Veniam elit non non labore. Mollit pariatur excepteur Lorem dolore nostrud ullamco non amet.
 
 ## useControl
 
 ## Store
 
 ## Leva Panel
-
-## Global Leva
-
-You can configure Leva by using the `<Leva>` component anywhere in your App:
-
-```jsx
-import { Leva } from "leva";
-
-export default function MyApp() {
-  return (
-    <>
-      <Leva
-        theme={myTheme} // you can pass a custom theme (see the styling section)
-        fill // default = false,  true makes the pane fill the parent dom node it's rendered in
-        flat // default = false,  true removes border radius and shadow
-        oneLineLabels // default = false, alternative layout for labels, with labels and fields on separate rows
-        hideTitleBar // default = false, hides the GUI header
-        collapsed // default = false, when true the GUI is collpased
-        hidden // default = false, when true the GUI is hidden
-      />
-    </>
-  );
-}
-```
-
-## Theme

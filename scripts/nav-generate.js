@@ -19,34 +19,52 @@ const slugify = (input) =>
 
 const ROUTES_PATH = path.join(process.cwd(), "lib", "doc-routes.json");
 
-const getMarkdownToc = (source) =>
+const transformHeading = ({ level, heading, docSlug }) => {
+  const id = slugify(heading);
+
+  return {
+    id,
+    level,
+    heading,
+  };
+};
+
+const getMarkdownToc = ({ source, docSlug }) =>
   source
     .split("\n")
     .map((line) => {
       const matches = line.match(/^#+[\s]+/);
 
-      return matches
-        ? {
-            level: matches[0].trim().length,
-            heading: line.replace(matches[0], "").trim(),
-            id: slugify(line.replace(matches[0], "").trim()),
-          }
-        : false;
+      if (!matches) return false;
+
+      const heading = line.replace(matches[0], "").trim();
+      const level = matches[0].trim().length;
+
+      return transformHeading({
+        level,
+        heading,
+        docSlug,
+      });
     })
     .filter(Boolean);
 
-const run = async () => {
+module.exports.generateNav = async () => {
   const files = glob.sync(`${MDX_PATH}/**/*.mdx`);
 
   const map = files
     .reduce((result, file) => {
       const source = fs.readFileSync(file, "utf8");
       const { data } = matter(source);
+
+      const slug = `/docs${file
+        .replace(`${MDX_PATH}`, "")
+        .replace(".mdx", "")}`;
+
       const toc = [
-        { level: 1, heading: data.title },
-        ...getMarkdownToc(source),
+        transformHeading({ level: 1, heading: data.title, docSlug: slug }),
+        ...getMarkdownToc({ source, docSlug: slug }),
       ];
-      const slug = `${file.replace(`${MDX_PATH}`, "").replace(".mdx", "")}`;
+
       return [
         ...result,
         {
@@ -62,5 +80,3 @@ const run = async () => {
   let data = JSON.stringify(map);
   fs.writeFileSync(ROUTES_PATH, data);
 };
-
-run();

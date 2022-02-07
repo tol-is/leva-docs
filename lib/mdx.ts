@@ -4,6 +4,7 @@ import path from "path";
 import glob from "glob";
 import matter from "gray-matter";
 import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 
 import { bundleMDX } from "mdx-bundler";
 import { remarkMdxCodeMeta } from "remark-mdx-code-meta";
@@ -52,7 +53,7 @@ export const getMDXMap = async () => {
 };
 
 const getMDXOptions = () => {
-  const remarkPlugins = [remarkMdxCodeMeta];
+  const remarkPlugins = [remarkMdxCodeMeta, remarkGfm];
   const rehypePlugins = [rehypeSlug];
 
   return {
@@ -87,17 +88,15 @@ export async function getMDX(filePath: string) {
   }
 }
 
-export const getWebsiteSlugs = async () => {
+export const getDocsSlugs = async () => {
   const docs = await getMDXMap();
 
-  console.log(docs);
-  return docs.map((doc) => doc.slug);
+  return docs.map((doc) => `/docs${doc.slug}`);
 };
 
 export const getDocBySlug = async (slug: string) => {
   const filePath = path.join(MDX_PATH, `${slug}.mdx`);
 
   const doc = await getMDX(filePath);
-  console.log(doc);
   return doc;
 };

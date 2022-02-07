@@ -2,6 +2,7 @@ import React from "react";
 import { LevaPanel, useControls, useCreateStore } from "leva";
 
 import { CodeBlock } from "./CodeBlock";
+import { Flex, Box } from "@components/UI";
 
 export const Pre = ({ children, demo }) => {
   const code = children.props.children.trim();
@@ -22,19 +23,52 @@ export const Pre = ({ children, demo }) => {
   );
 
   return (
-    <div
+    <Flex
       data-mdx="pre-container"
-      className="flex flex-col sm:flex-row bg-grey-80 rounded p-5"
+      css={{
+        background: "$grey100",
+
+        padding: "$4 $4",
+        flexDirection: "column",
+        "@sm": {
+          flexDirection: "row",
+        },
+        "@md": {
+          flexDirection: "column",
+        },
+        "@lg": {
+          flexDirection: "row",
+        },
+      }}
     >
-      <div
-        data-mdx="pre-side-leva"
-        className="order-1 sm:order-2 w-full flex items-center"
+      <Flex
+        css={{
+          order: 1,
+          width: "100%",
+          alignItems: "center",
+          "@sm": {
+            maxWidth: "300px",
+            order: 2,
+          },
+        }}
       >
         <LevaPanel store={store} fill titleBar={false} />
-      </div>
-      <div className="order-2 sm:order-1 flex-1 mt-6 sm:mt-0 sm:pr-5">
+      </Flex>
+      <Box
+        css={{
+          order: 1,
+          width: "100%",
+          flex: "1",
+          marginTop: "$4",
+          "@sm": {
+            order: 1,
+            marginTop: "$0",
+            paddingRight: "$4",
+          },
+        }}
+      >
         <CodeBlock code={code} language={language} />
-      </div>
-    </div>
+      </Box>
+    </Flex>
   );
 };

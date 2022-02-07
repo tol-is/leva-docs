@@ -13,5 +13,6 @@ export const globalStyles = globalCss({
     "-webkit-font-smoothing": "antialiased",
     "-moz-osx-font-smoothing": "grayscale",
     textRendering: "optimizeLegibility",
+    fontFeatureSettings: "salt",
   },
 });
