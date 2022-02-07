@@ -8,14 +8,19 @@ import { Box, Flex } from "./UI";
 import { IconButton } from "./Actions";
 import { Tooltip } from "./Tooltip";
 
-export const CodeCopy = ({ prefix = null, text, label }) => {
+export const CodeCopy = ({
+  prefix = null,
+  loContrast = false,
+  text,
+  label,
+}) => {
   const [hasCopied, setHasCopied] = React.useState(false);
 
   return (
     <Box
       css={{
         display: "inline-flex",
-        background: "$grey100",
+        background: loContrast ? "$grey80" : "$grey100",
         alignItems: "center",
         padding: "0 $2 0 $3",
         height: "$7",

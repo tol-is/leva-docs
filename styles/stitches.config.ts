@@ -68,7 +68,7 @@ export const {
       12: "160px",
       13: "192px",
       sidenav: "240px",
-      prose: "40rem",
+      prose: "38rem",
     },
     fontSizes: {
       0: "11px",

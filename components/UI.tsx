@@ -16,7 +16,7 @@ export const Container = styled("div", {
         maxWidth: "80rem",
       },
       doc: {
-        maxWidth: "64rem",
+        maxWidth: "60rem",
       },
     },
   },
@@ -30,7 +30,7 @@ export const WrapperPageDoc = styled("div", {
     paddingLeft: "$sidenav",
   },
   "@xl": {
-    paddingRight: "$sidenav",
+    paddingRight: "calc($sidenav / 2)",
   },
 });
 

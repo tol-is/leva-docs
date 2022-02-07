@@ -2,7 +2,7 @@ import { LevaPanel } from "leva";
 import React from "react";
 import NextLink from "next/link";
 
-import { Display1 } from "./Text";
+import { Display1, DisplayMono } from "./Text";
 import { CodeCopy } from "./CodeCopy";
 import { Box, Flex, Container } from "./UI";
 import { PrimaryCta } from "./Actions";
@@ -10,6 +10,9 @@ import { PrimaryCta } from "./Actions";
 export const HomeIntro = ({ store }) => {
   return (
     <Container size="home" as="section" css={{ position: "relative" }}>
+      <DisplayMono as="p" css={{ marginBottom: "$4" }}>
+        By Poimandres
+      </DisplayMono>
       <Display1 as="h1" css={{ maxWidth: "25ch", color: "$hiContrast" }}>
         The most powerfull parametric GUI for react applications and rich
         interactive experiences.

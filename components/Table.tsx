@@ -73,7 +73,7 @@ export const Th = styled("th", {
 export const Tr = styled("tr", {
   borderBottom: "1px solid $grey60",
   "@sm": {
-    border: "none",
+    border: "0",
   },
 });
 
@@ -101,7 +101,7 @@ export const Td = styled("td", {
     borderBottom: "1px solid $grey60",
     padding: "$3 $1",
     "&:before": {
-      display: "none",
+      display: "0",
     },
   },
 });

@@ -35,7 +35,7 @@ export default function Page({ post }) {
                 css={{
                   marginTop: "$8",
                   "@sm": {
-                    marginTop: "$10",
+                    marginTop: "$11",
                   },
                 }}
               >

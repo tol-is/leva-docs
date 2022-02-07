@@ -13,7 +13,9 @@ export const Intro = ({ title, description, ...rest }) => {
   return (
     <Box as="header" {...rest}>
       <H1 id={id}>{title}</H1>
-      <Large css={{ marginTop: "$3" }}>{description}</Large>
+      <Large css={{ marginTop: "$3" }} prose>
+        {description}
+      </Large>
     </Box>
   );
 };
