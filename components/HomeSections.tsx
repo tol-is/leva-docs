@@ -87,11 +87,12 @@ const SectionLink = styled(Anchor, {
 
 const SectionBlock = ({ title, label, description, href, children }) => {
   return (
-    <Grid css={{ gap: "$5", position: "relative" }}>
+    <Grid css={{ gap: "$3", position: "relative" }}>
       <DisplayMono>{title}</DisplayMono>
       <Box css={{ maxWidth: "320px", position: "relative", zIndex: 12 }}>
         {children}
       </Box>
+
       <Paragraph>{description}</Paragraph>
       <SectionLink href={href}>
         <Box css={{ display: "flex", alignItems: "center" }}>

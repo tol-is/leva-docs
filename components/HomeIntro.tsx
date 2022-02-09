@@ -10,7 +10,7 @@ import { PrimaryCta } from "./Actions";
 export const HomeIntro = ({ store }) => {
   return (
     <Container size="home" as="section" css={{ position: "relative" }}>
-      <DisplayMono as="p" css={{ marginBottom: "$4" }}>
+      <DisplayMono as="p" css={{ marginBottom: "$3" }}>
         By Poimandres
       </DisplayMono>
       <Display1 as="h1" css={{ maxWidth: "25ch", color: "$hiContrast" }}>

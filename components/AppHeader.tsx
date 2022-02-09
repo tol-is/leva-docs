@@ -3,19 +3,19 @@ import React from "react";
 import Link from "next/link";
 
 import { styled } from "@styles/stitches.config";
+import { Box } from "./UI";
 
 const StyledHeader = styled("header", {
   position: "fixed",
-  padding: "$5 $4 $3 $4",
+  padding: "$5 $3 $3 $3",
   width: "100%",
   display: "flex",
   zIndex: "20",
   top: 0,
   background: "$grey100",
-  flexDirection: "column",
+  alignItems: "center",
   "@sm": {
-    flexDirection: "row",
-    alignItems: "center",
+    padding: "$5 $4 $3 $4",
   },
   "@md": {
     padding: "$5 $6 $5 $6",
@@ -24,6 +24,7 @@ const StyledHeader = styled("header", {
 
 const HomeLink = styled("a", {
   color: "$accent",
+  flex: "none",
   "@xs": {
     marginTop: "-$semi",
   },
@@ -35,6 +36,7 @@ const HeaderLink = styled("a", {
   fontSize: "$1",
   textDecoration: "none",
   textTransform: "uppercase",
+  padding: "$3 0",
   "&:hover": {
     color: "$hiContrast",
     textDecoration: "underline",
@@ -44,11 +46,8 @@ const HeaderLink = styled("a", {
 const HeaderNavList = styled("ul", {
   display: "flex",
   listStyle: "none",
-  margin: "$3 $0 $0 $0",
+  margin: "$0 $0 $0 $4",
   padding: 0,
-  "@sm": {
-    margin: "$0 $0 $0 $4",
-  },
   "> li + li": {
     marginLeft: "$4",
   },
@@ -105,7 +104,15 @@ export const AppHeader = () => {
             Github
           </HeaderLink>
         </li>
-        <li>
+        <Box
+          as="li"
+          css={{
+            display: "none",
+            "@xs": {
+              display: "block",
+            },
+          }}
+        >
           <HeaderLink
             href="https://github.com/pmndrs/leva"
             rel="noopener noreferrer"
@@ -113,7 +120,7 @@ export const AppHeader = () => {
           >
             Discord
           </HeaderLink>
-        </li>
+        </Box>
       </HeaderNavList>
     </StyledHeader>
   );
