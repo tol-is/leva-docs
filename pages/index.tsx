@@ -5,7 +5,7 @@ import { useCreateStore } from "leva";
 import { HomeIntro } from "@components/HomeIntro";
 import { HomeDemo } from "@components/HomeDemo";
 import { HomeSections } from "@components/HomeSections";
-import { Box } from "@components/UI";
+import { Box, HomePageRow } from "@components/UI";
 import { HomeFeatures } from "@components/HomeFeatures";
 import { HomeSupport } from "@components/HomeSupport";
 
@@ -23,24 +23,20 @@ export default function Page() {
         css={{
           zIndex: 1,
           position: "relative",
-          paddingTop: "$13",
-          "@md": {
-            paddingTop: "$13",
-          },
         }}
       >
-        <Box css={{ marginTop: "$0" }}>
+        <HomePageRow>
           <HomeIntro store={store} />
-        </Box>
-        <Box css={{ marginTop: "$13" }}>
+        </HomePageRow>
+        <HomePageRow dark>
           <HomeSections />
-        </Box>
-        <Box css={{ marginTop: "$13" }}>
+        </HomePageRow>
+        <HomePageRow>
           <HomeFeatures />
-        </Box>
-        <Box css={{ marginTop: "$13" }}>
+        </HomePageRow>
+        <HomePageRow dark>
           <HomeSupport />
-        </Box>
+        </HomePageRow>
       </Box>
     </>
   );

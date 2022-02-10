@@ -26,7 +26,7 @@ export default function Page({ post }) {
             <title>Leva | {post.frontmatter.title}</title>
           </Head>
           <WrapperPageDoc>
-            <Container size="doc">
+            <Container layout="doc">
               <Intro
                 title={post.frontmatter.title}
                 description={post.frontmatter.description}

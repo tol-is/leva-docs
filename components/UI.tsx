@@ -14,12 +14,30 @@ export const Container = styled("div", {
     padding: "$0 $6",
   },
   variants: {
-    size: {
+    layout: {
       home: {
         maxWidth: "80rem",
       },
       doc: {
         maxWidth: "60rem",
+      },
+    },
+  },
+});
+
+export const HomePageRow = styled("div", {
+  padding: "$11 $0",
+  "@md": {
+    padding: "$13 $0",
+  },
+  variants: {
+    dark: {
+      true: {
+        backgroundColor: "$grey100",
+        padding: "$9 $0",
+        "@md": {
+          padding: "$10 $0",
+        },
       },
     },
   },
@@ -37,7 +55,7 @@ export const WrapperPageDoc = styled("div", {
   },
 });
 
-export const Main = styled("main", { flex: 1 });
+export const Main = styled("main", { paddingTop: "$8", flex: 1 });
 
 export const Flex = styled("div", {
   display: "flex",

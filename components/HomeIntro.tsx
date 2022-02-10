@@ -9,7 +9,7 @@ import { PrimaryCta } from "./Actions";
 
 export const HomeIntro = ({ store }) => {
   return (
-    <Container size="home" as="section" css={{ position: "relative" }}>
+    <Container layout="home" as="section" css={{ position: "relative" }}>
       <DisplayMono as="p" css={{ marginBottom: "$3" }}>
         By Poimandres
       </DisplayMono>
@@ -23,9 +23,8 @@ export const HomeIntro = ({ store }) => {
         direction={{ "@initial": "column", "@xs": "row" }}
       >
         <CodeCopy
-          prefix="npm"
           text="npm install leva"
-          label="Copy the install snippet to Clipboard"
+          label="Copy the npm install snippet to Clipboard"
         />
         <NextLink href="/docs/intro" passHref>
           <PrimaryCta

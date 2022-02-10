@@ -7,18 +7,19 @@ import { Box } from "./UI";
 
 const StyledHeader = styled("header", {
   position: "fixed",
-  padding: "$5 $3 $3 $3",
+  padding: "$0 $3",
   width: "100%",
   display: "flex",
   zIndex: "20",
   top: 0,
   background: "$grey100",
   alignItems: "center",
+  height: "$8",
   "@sm": {
-    padding: "$5 $4 $3 $4",
+    padding: "$0 $4",
   },
   "@md": {
-    padding: "$5 $6 $5 $6",
+    padding: "$0 $6",
   },
 });
 

@@ -108,43 +108,41 @@ const SectionBlock = ({ title, label, description, href, children }) => {
 
 export const HomeSections = () => {
   return (
-    <Box css={{ background: "$grey100", padding: "$8 $0" }}>
-      <Container size="home" as="section" css={{ position: "relative" }}>
-        <Grid
-          columns={{ "@initial": 1, "@sm": 3 }}
-          css={{ gap: "$8", "@sm": { gap: "$10" } }}
-        >
-          <SectionBlock
-            href="/docs/intro"
-            title="input Types"
-            label="input Types"
-            description="Leva is designed with simplicity in mind, for a minimal learning curve,
+    <Container layout="home" as="section">
+      <Grid
+        columns={{ "@initial": 1, "@sm": 3 }}
+        css={{ gap: "$8", "@sm": { gap: "$10" } }}
+      >
+        <SectionBlock
+          href="/docs/intro"
+          title="input Types"
+          label="input Types"
+          description="Leva is designed with simplicity in mind, for a minimal learning curve,
         and the best possible developer experience."
-          >
-            <DemoColumnOne />
-          </SectionBlock>
+        >
+          <DemoColumnOne />
+        </SectionBlock>
 
-          <SectionBlock
-            href="/docs/intro"
-            title="Fully Customizable"
-            label="Customizations"
-            description=" Comes with a ton of options and configurations and a fully
+        <SectionBlock
+          href="/docs/intro"
+          title="Fully Customizable"
+          label="Customizations"
+          description=" Comes with a ton of options and configurations and a fully
             customizable theme, down to the last detail."
-          >
-            <DemoColumnOne />
-          </SectionBlock>
+        >
+          <DemoColumnOne />
+        </SectionBlock>
 
-          <SectionBlock
-            href="/docs/intro"
-            title="Build your own plugins"
-            label="Plugins"
-            description="Full typed API, enables developers to build custom leva components
+        <SectionBlock
+          href="/docs/intro"
+          title="Build your own plugins"
+          label="Plugins"
+          description="Full typed API, enables developers to build custom leva components
             and solve every possible use-case."
-          >
-            <DemoColumnOne />
-          </SectionBlock>
-        </Grid>
-      </Container>
-    </Box>
+        >
+          <DemoColumnOne />
+        </SectionBlock>
+      </Grid>
+    </Container>
   );
 };
