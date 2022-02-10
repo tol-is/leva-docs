@@ -29,6 +29,7 @@ export const IconButton = styled("button", {
 export const PrimaryCta = styled("a", {
   display: "flex",
   alignItems: "center",
+  justifyContent: "center",
   background: "$accent",
   color: "$hiContrast",
   padding: "$0 $5",
