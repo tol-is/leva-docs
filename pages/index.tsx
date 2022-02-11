@@ -8,6 +8,7 @@ import { HomeSections } from "@components/HomeSections";
 import { Box, HomePageRow } from "@components/UI";
 import { HomeFeatures } from "@components/HomeFeatures";
 import { HomeSupport } from "@components/HomeSupport";
+import { HomeExamples } from "@components/HomeExamples";
 
 export default function Page() {
   const store = useCreateStore();
@@ -35,6 +36,9 @@ export default function Page() {
           <HomeFeatures />
         </HomePageRow>
         <HomePageRow dark>
+          <HomeExamples />
+        </HomePageRow>
+        <HomePageRow accent>
           <HomeSupport />
         </HomePageRow>
       </Box>

@@ -40,6 +40,15 @@ export const HomePageRow = styled("div", {
         },
       },
     },
+    accent: {
+      true: {
+        backgroundColor: "$grey90",
+        padding: "$9 $0",
+        "@md": {
+          padding: "$10 $0",
+        },
+      },
+    },
   },
 });
 

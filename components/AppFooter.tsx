@@ -13,6 +13,7 @@ const StyledFooter = styled(Container, {
   justifyContent: "center",
   zIndex: 10,
   position: "relative",
+  backgroundColor: "$grey100",
   "@md": {
     height: "$10",
   },

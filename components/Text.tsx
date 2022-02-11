@@ -84,6 +84,10 @@ export const Display1 = (props: HeadingProps) => (
   <Heading as="h1" size={{ "@initial": 7, "@sm": 8, "@lg": 10 }} {...props} />
 );
 
+export const Display2 = (props: HeadingProps) => (
+  <Heading as="h1" size={{ "@initial": 6, "@sm": 7, "@lg": 9 }} {...props} />
+);
+
 export const DisplayMono = styled("h2", {
   fontSize: "$1",
   fontFamily: "$mono",
