@@ -3,11 +3,10 @@ import React from "react";
 import Link from "next/link";
 
 import { styled } from "@styles/stitches.config";
-import { Box } from "./UI";
+import { Box, Container } from "./UI";
 
-const StyledHeader = styled("header", {
+const StyledHeader = styled(Container, {
   position: "fixed",
-  padding: "$0 $3",
   width: "100%",
   display: "flex",
   zIndex: "20",
@@ -15,12 +14,7 @@ const StyledHeader = styled("header", {
   background: "$grey100",
   alignItems: "center",
   height: "$8",
-  "@sm": {
-    padding: "$0 $4",
-  },
-  "@md": {
-    padding: "$0 $6",
-  },
+  maxWidth: "100%",
 });
 
 const HomeLink = styled("a", {
@@ -56,7 +50,7 @@ const HeaderNavList = styled("ul", {
 
 export const AppHeader = () => {
   return (
-    <StyledHeader>
+    <StyledHeader as="header">
       <Link href="/" passHref>
         <HomeLink>
           <svg

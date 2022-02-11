@@ -5,9 +5,10 @@ import { ChevronRightIcon } from "@modulz/radix-icons";
 
 import { styled } from "@styles/stitches.config";
 
-import { DisplayMono, Paragraph } from "./Text";
+import { DisplayMono, H3, H4, H5, Paragraph, VisuallyHidden } from "./Text";
 import { Box, Container, Flex, Grid } from "./UI";
 import { Anchor } from "./Actions";
+import { Carousel } from "./Carousel";
 
 const DemoColumnOne = () => {
   const store = useCreateStore();
@@ -64,6 +65,7 @@ const DemoColumnThree = () => {
 };
 
 const SectionLink = styled(Anchor, {
+  display: "inline-block",
   "&:before": {
     content: "",
     zIndex: 8,
@@ -87,62 +89,81 @@ const SectionLink = styled(Anchor, {
 
 const SectionBlock = ({ title, label, description, href, children }) => {
   return (
-    <Grid css={{ gap: "$3", position: "relative" }}>
-      <DisplayMono>{title}</DisplayMono>
+    <Flex
+      as="article"
+      direction="column"
+      css={{
+        minWidth: "280px",
+        gap: "$4",
+        position: "relative",
+        justifyContent: "flex-start",
+      }}
+    >
+      <H5 as="h2">{title}</H5>
+
       <Box css={{ maxWidth: "320px", position: "relative", zIndex: 12 }}>
         {children}
       </Box>
 
       <Paragraph>{description}</Paragraph>
-      <SectionLink href={href}>
-        <Box css={{ display: "flex", alignItems: "center" }}>
-          <Box css={{ marginBottom: "$semi", marginRight: "$4" }}>
-            Go to {label}
+      <div>
+        <SectionLink href={href}>
+          <Box css={{ display: "flex", alignItems: "center" }}>
+            <Box css={{ marginBottom: "$semi", marginRight: "$4" }}>
+              <VisuallyHidden>Go to</VisuallyHidden> {label}
+            </Box>
+            <ChevronRightIcon />
           </Box>
-          <ChevronRightIcon />
-        </Box>
-      </SectionLink>
-    </Grid>
+        </SectionLink>
+      </div>
+    </Flex>
   );
 };
 
 export const HomeSections = () => {
   return (
     <Container layout="home" as="section">
-      <Grid
-        columns={{ "@initial": 1, "@sm": 3 }}
-        css={{ gap: "$8", "@sm": { gap: "$10" } }}
-      >
-        <SectionBlock
-          href="/docs/intro"
-          title="input Types"
-          label="input Types"
-          description="Leva is designed with simplicity in mind, for a minimal learning curve,
+      <Carousel>
+        <Flex
+          css={{
+            gap: "$10",
+            flexWrap: "nowrap",
+            "> * ": {
+              flex: "1",
+            },
+          }}
+        >
+          <SectionBlock
+            href="/docs/intro"
+            title="input Types"
+            label="input Types"
+            description="Leva is designed with simplicity in mind, for a minimal learning curve,
         and the best possible developer experience."
-        >
-          <DemoColumnOne />
-        </SectionBlock>
+          >
+            <DemoColumnOne />
+          </SectionBlock>
 
-        <SectionBlock
-          href="/docs/intro"
-          title="Fully Customizable"
-          label="Customizations"
-          description=" Comes with a ton of options and configurations and a fully
+          <SectionBlock
+            href="/docs/intro"
+            title="Fully Customizable"
+            label="Customizations"
+            description=" Comes with a ton of options and configurations and a fully
             customizable theme, down to the last detail."
-        >
-          <DemoColumnOne />
-        </SectionBlock>
+          >
+            <DemoColumnOne />
+          </SectionBlock>
 
-        <SectionBlock
-          href="/docs/intro"
-          title="Build your own plugins"
-          label="Plugins"
-          description="Full typed API, enables developers to build custom leva components
+          <SectionBlock
+            href="/docs/intro"
+            title="Build your own plugins"
+            label="Plugins"
+            description="Full typed API, enables developers to build custom leva components
             and solve every possible use-case."
-        >
-          <DemoColumnOne />
-        </SectionBlock>
-      </Grid>
+          >
+            <DemoColumnOne />
+          </SectionBlock>
+        </Flex>
+      </Carousel>
     </Container>
   );
 };

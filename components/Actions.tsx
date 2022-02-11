@@ -51,8 +51,10 @@ export const PrimaryCta = styled("a", {
 
 const StyledTextLink = styled("a", {
   color: "$loContrast",
-  fontWeight: 700,
   textDecoration: "none",
+  fontFamily: "$mono",
+  fontSize: "$1",
+  textTransform: "uppercase",
   "&:hover": {
     color: "$hiContrast",
   },
@@ -62,6 +64,9 @@ const StyledTextLink = styled("a", {
   },
   variants: {
     bold: {
+      true: {
+        fontWeight: 700,
+      },
       false: {
         fontWeight: 400,
       },

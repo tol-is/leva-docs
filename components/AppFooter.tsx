@@ -1,11 +1,11 @@
 import React from "react";
 
-import Link from "next/link";
-
 import { styled } from "@styles/stitches.config";
-import { Anchor } from "./Actions";
 
-const StyledFooter = styled("header", {
+import { Anchor } from "./Actions";
+import { Container } from "./UI";
+
+const StyledFooter = styled(Container, {
   display: "flex",
   height: "$8",
   width: "100%",
@@ -20,7 +20,7 @@ const StyledFooter = styled("header", {
 
 export const AppFooter = () => {
   return (
-    <StyledFooter>
+    <StyledFooter as="footer">
       <Anchor href="/">MADE BY OSS</Anchor>
     </StyledFooter>
   );

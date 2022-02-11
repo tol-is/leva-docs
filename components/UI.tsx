@@ -7,10 +7,10 @@ export const Box = styled("div");
 export const Container = styled("div", {
   margin: "$0 auto",
   padding: "$0 $3",
-  "@sm": {
-    padding: "$0 $4",
+  "@xs": {
+    padding: "$0 $5",
   },
-  "@md": {
+  "@sm": {
     padding: "$0 $6",
   },
   variants: {
