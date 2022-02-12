@@ -24,7 +24,6 @@ export const HomeSupport = () => {
       </Paragraph>
       <Box css={{ margin: "$6 auto 0 auto" }}>
         <CodeCopy
-          loContrast
           prefix="$"
           text="https://opencollective.com/leva"
           label="Open Collective"
@@ -32,7 +31,6 @@ export const HomeSupport = () => {
       </Box>
       <Box css={{ margin: "$3 auto" }}>
         <CodeCopy
-          loContrast
           prefix="₿"
           text="36fuguTPxGCNnYZSRdgdh6Ea94brCAjMbH"
           label="Bitcoin"
@@ -40,7 +38,6 @@ export const HomeSupport = () => {
       </Box>
       <Box css={{ margin: "0 auto" }}>
         <CodeCopy
-          loContrast
           prefix="Ξ"
           text="0x6E3f79Ea1d0dcedeb33D3fC6c34d2B1f156F2682"
           label="Ethereum"
