@@ -45,7 +45,7 @@ export const HomePageRow = styled("div", {
 
 export const WrapperPageDoc = styled("div", {
   margin: "$0",
-  padding: "$11 $0",
+  padding: "$9 $0",
   // maxWidth: "1600px",
   "@lg": {
     paddingLeft: "$sidenav",

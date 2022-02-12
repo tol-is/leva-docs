@@ -4,10 +4,9 @@ import ErrorPage from "next/error";
 import Head from "next/head";
 
 import { getDocBySlug, getDocsSlugs } from "@lib/mdx";
-import { MDXRenderer } from "@components/MDXRenderer";
+import { MDXRenderer } from "@components/mdx/MDXRenderer";
 import { Box, Container, WrapperPageDoc } from "@components/UI";
 import { Loading } from "@components/Loading";
-import { Intro } from "@components/Intro";
 
 export default function Page({ post }) {
   const router = useRouter();
@@ -27,20 +26,7 @@ export default function Page({ post }) {
           </Head>
           <WrapperPageDoc>
             <Container layout="doc">
-              <Intro
-                title={post.frontmatter.title}
-                description={post.frontmatter.description}
-              />
-              <Box
-                css={{
-                  marginTop: "$8",
-                  "@sm": {
-                    marginTop: "$11",
-                  },
-                }}
-              >
-                <MDXRenderer code={post.code} />
-              </Box>
+              <MDXRenderer code={post.code} frontmatter={post.frontmatter} />
             </Container>
           </WrapperPageDoc>
         </>
@@ -55,6 +41,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       post: post || null,
+      slug: params.slug.join("/"),
     },
     revalidate: 1,
   };

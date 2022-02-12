@@ -19,7 +19,7 @@ const slugify = (input) => {
     .slice(0, 200);
 };
 
-const ROUTES_PATH = path.join(process.cwd(), "lib", "doc-routes.json");
+const ROUTES_PATH = path.join(process.cwd(), "lib", "sitemap.json");
 
 const transformHeading = ({ level, heading, docSlug }) => {
   const id = slugify(heading);
@@ -50,10 +50,10 @@ const getMarkdownToc = ({ source, docSlug }) =>
     })
     .filter(Boolean);
 
-module.exports.generateNav = async () => {
+module.exports.generateSitemap = async () => {
   const files = glob.sync(`${MDX_PATH}/**/*.mdx`);
 
-  const map = files
+  const docs = files
     .reduce((result, file) => {
       const source = fs.readFileSync(file, "utf8");
       const { data } = matter(source);
@@ -62,23 +62,20 @@ module.exports.generateNav = async () => {
         .replace(`${MDX_PATH}`, "")
         .replace(".mdx", "")}`;
 
-      const toc = [
-        transformHeading({ level: 1, heading: data.title, docSlug: slug }),
-        ...getMarkdownToc({ source, docSlug: slug }),
-      ];
+      const toc = [...getMarkdownToc({ source, docSlug: slug })];
 
       return [
         ...result,
         {
           ...data,
-          toc: toc,
           slug: slug,
+          toc: toc,
         },
       ];
     }, [])
     .sort((a, b) => Number(a.order) - Number(b.order))
     .filter(Boolean);
 
-  let data = JSON.stringify(map);
+  let data = JSON.stringify({ docs });
   fs.writeFileSync(ROUTES_PATH, data);
 };

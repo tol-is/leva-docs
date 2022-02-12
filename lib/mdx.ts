@@ -9,6 +9,8 @@ import remarkGfm from "remark-gfm";
 import { bundleMDX } from "mdx-bundler";
 import { remarkMdxCodeMeta } from "remark-mdx-code-meta";
 
+import sitemap from "./sitemap.json";
+
 export const MDX_PATH = path.join(
   process.cwd(),
   "docs",
@@ -98,5 +100,10 @@ export const getDocBySlug = async (slug: string) => {
   const filePath = path.join(MDX_PATH, `${slug}.mdx`);
 
   const doc = await getMDX(filePath);
-  return doc;
+
+  const frontmatter = sitemap.docs.find(
+    (entry) => entry.slug === `/docs/${slug}`
+  );
+
+  return { ...doc, frontmatter };
 };

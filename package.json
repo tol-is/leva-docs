@@ -7,7 +7,7 @@
     "dev": "yarn nav && next",
     "build": "yarn nav && next build",
     "clean": "rimraf .next",
-    "nav": "node scripts/nav-run.js"
+    "nav": "node scripts/sitemap-run.js"
   },
   "license": "UNLICENSED",
   "dependencies": {

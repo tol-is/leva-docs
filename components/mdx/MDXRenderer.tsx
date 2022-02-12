@@ -13,11 +13,15 @@ import {
   monitor,
 } from "leva";
 
-import { MDXProse } from "./mdx/MDXProse";
+import { TDocFrontMatter } from "@lib/sitemap";
+import { MDXProse } from "./MDXProse";
+import { MDXComponents } from "./MDXComponents";
+import { MDXContext } from "./MDXContext";
 
-import { MDXComponents } from "./mdx/MDXComponents";
-
-export const MDXRenderer: React.FC<{ code: string }> = ({ code }) => {
+export const MDXRenderer: React.FC<{
+  code: string;
+  frontmatter: TDocFrontMatter;
+}> = ({ code, frontmatter }) => {
   const Component = useMemo(
     () =>
       getMDXComponent(code, {
@@ -36,9 +40,15 @@ export const MDXRenderer: React.FC<{ code: string }> = ({ code }) => {
     [code]
   );
 
+  const providerValue = useMemo(() => {
+    return frontmatter;
+  }, [frontmatter]);
+
   return (
     <MDXProse>
-      <Component components={MDXComponents as any} />
+      <MDXContext.Provider value={providerValue}>
+        <Component components={MDXComponents as any} />
+      </MDXContext.Provider>
     </MDXProse>
   );
 };

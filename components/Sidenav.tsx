@@ -2,32 +2,17 @@ import React, { useState } from "react";
 import NextLink from "next/link";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 
-import map from "@lib/doc-routes.json";
+import { sitemap } from "@lib/sitemap";
 
 import { styled } from "@styles/stitches.config";
 import { Box, Flex } from "./UI";
-
-type TDoc = {
-  title: string;
-  level: number;
-  doc: string;
-  description: string;
-  slug: string;
-  toc: TDocSection[];
-};
-
-type TDocSection = {
-  heading: string;
-  level: number;
-  id: string;
-};
 
 const StyledSidenav = styled("nav", {
   display: "none",
   position: "fixed",
   zIndex: 10,
   left: 0,
-  top: 0,
+  top: "$8",
   bottom: 0,
   width: "$sidenav",
   background: "$grey80",
@@ -51,9 +36,9 @@ const NavRoot = styled("div", {
   flexDirection: "column",
   alignItems: "flex-start",
   justifyContent: "center",
-  padding: "$11 $4 $11 $4",
+  padding: "$9 $4 $13 $4",
   "@sm": {
-    padding: "$11 $6 $11 $6",
+    padding: "$9 $6 $13 $6",
   },
 });
 
@@ -89,7 +74,6 @@ const SidenavLink = ({ heading, id, level, parentSlug }) => {
 };
 
 export const Sidenav = () => {
-  const sidenav = map as unknown as TDoc[];
   return (
     <StyledSidenav>
       <ScrollRoot>
@@ -102,7 +86,7 @@ export const Sidenav = () => {
                 },
               }}
             >
-              {sidenav.map((doc) => (
+              {sitemap.docs.map((doc) => (
                 <Flex direction="column" as="ul" key={doc.slug}>
                   {doc.toc.map((section) => (
                     <li key={`${doc.slug}-${section.id}`}>
