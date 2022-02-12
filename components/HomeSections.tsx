@@ -125,8 +125,8 @@ export const HomeSections = () => {
       <Carousel>
         <SectionBlock
           href="/docs/intro"
-          title="input Types"
-          label="input Types"
+          title="Input Types"
+          label="Input Types"
           description="Leva is designed with simplicity in mind, for a minimal learning curve,
         and the best possible developer experience."
         >

@@ -6,7 +6,9 @@ import { Box, Flex, Grid } from "./UI";
 
 const ScrollRoot = styled(ScrollArea.Root, {});
 
-const ScrollViewport = styled(ScrollArea.Viewport);
+const ScrollViewport = styled(ScrollArea.Viewport, {
+  scrollSnapType: "x mandatory",
+});
 
 export const Carousel = ({ children }) => {
   const count = Children.count(children);
@@ -25,6 +27,9 @@ export const Carousel = ({ children }) => {
             },
             "@lg": {
               width: `calc(${(count / 3) * 100}% + ${count - 3} * $8)`,
+            },
+            "& > *": {
+              scrollSnapAlign: "start",
             },
           }}
         >
