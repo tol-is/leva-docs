@@ -11,7 +11,9 @@ const MDX_PATH = path.join(
 
 const slugify = (input) => {
   console.log(input);
+
   return input
+    .toString()
     .toLowerCase()
     .replace(/\s+/g, "-")
     .replaceAll("_", "-")

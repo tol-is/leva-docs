@@ -2,14 +2,11 @@ import React from "react";
 
 import { H1, Large } from "@components/Text";
 import { Box } from "./UI";
+import { slugify } from "@lib/slug";
 
 export const Intro = ({ title, description, ...rest }) => {
-  const id = title
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replaceAll("_", "-")
-    .replaceAll("--", "-")
-    .slice(0, 200);
+  const id = slugify(title);
+
   return (
     <Box as="header" {...rest}>
       <H1 id={id}>{title}</H1>
