@@ -93,7 +93,6 @@ const SectionBlock = ({ title, label, description, href, children }) => {
       as="article"
       direction="column"
       css={{
-        minWidth: "280px",
         gap: "$4",
         position: "relative",
         justifyContent: "flex-start",
@@ -124,45 +123,35 @@ export const HomeSections = () => {
   return (
     <Container layout="home" as="section">
       <Carousel>
-        <Flex
-          css={{
-            gap: "$10",
-            flexWrap: "nowrap",
-            "> * ": {
-              flex: "1",
-            },
-          }}
-        >
-          <SectionBlock
-            href="/docs/intro"
-            title="input Types"
-            label="input Types"
-            description="Leva is designed with simplicity in mind, for a minimal learning curve,
+        <SectionBlock
+          href="/docs/intro"
+          title="input Types"
+          label="input Types"
+          description="Leva is designed with simplicity in mind, for a minimal learning curve,
         and the best possible developer experience."
-          >
-            <DemoColumnOne />
-          </SectionBlock>
+        >
+          <DemoColumnOne />
+        </SectionBlock>
 
-          <SectionBlock
-            href="/docs/intro"
-            title="Fully Customizable"
-            label="Customizations"
-            description=" Comes with a ton of options and configurations and a fully
+        <SectionBlock
+          href="/docs/intro"
+          title="Fully Customizable"
+          label="Customizations"
+          description=" Comes with a ton of options and configurations and a fully
             customizable theme, down to the last detail."
-          >
-            <DemoColumnOne />
-          </SectionBlock>
+        >
+          <DemoColumnOne />
+        </SectionBlock>
 
-          <SectionBlock
-            href="/docs/intro"
-            title="Build your own plugins"
-            label="Plugins"
-            description="Full typed API, enables developers to build custom leva components
+        <SectionBlock
+          href="/docs/intro"
+          title="Build your own plugins"
+          label="Plugins"
+          description="Full typed API, enables developers to build custom leva components
             and solve every possible use-case."
-          >
-            <DemoColumnOne />
-          </SectionBlock>
-        </Flex>
+        >
+          <DemoColumnOne />
+        </SectionBlock>
       </Carousel>
     </Container>
   );
