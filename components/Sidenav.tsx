@@ -103,7 +103,7 @@ export const Sidenav = () => {
               }}
             >
               {sidenav.map((doc) => (
-                <Flex direction="column" as="ul">
+                <Flex direction="column" as="ul" key={doc.slug}>
                   {doc.toc.map((section) => (
                     <li key={`${doc.slug}-${section.id}`}>
                       <SidenavLink {...section} parentSlug={doc.slug} />
