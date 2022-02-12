@@ -38,7 +38,7 @@ export default function Page() {
         <HomePageRow dark>
           <HomeExamples />
         </HomePageRow>
-        <HomePageRow accent>
+        <HomePageRow>
           <HomeSupport />
         </HomePageRow>
       </Box>
