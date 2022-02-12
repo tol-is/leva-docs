@@ -9,13 +9,15 @@ const MDX_PATH = path.join(
   process.env.NEXT_PUBLIC_LEVA_VERSION
 );
 
-const slugify = (input) =>
-  input
+const slugify = (input) => {
+  console.log(input);
+  return input
     .toLowerCase()
     .replace(/\s+/g, "-")
     .replaceAll("_", "-")
     .replaceAll("--", "-")
     .slice(0, 200);
+};
 
 const ROUTES_PATH = path.join(process.cwd(), "lib", "doc-routes.json");
 
