@@ -7,9 +7,9 @@ import { Box, Container } from "./UI";
 export const HomeExamples = () => {
   return (
     <Container layout="home" as="section" css={{ position: "relative" }}>
-      <DisplayMono>Batteries Included</DisplayMono>
+      <DisplayMono>Examples</DisplayMono>
       <Display2 as="h2" css={{ margin: "$2 0 $4 0", maxWidth: "30ch" }}>
-        Examples
+        Perhaps a horizontal scroll with inline examples?
       </Display2>
     </Container>
   );
