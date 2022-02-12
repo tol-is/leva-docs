@@ -10,8 +10,6 @@ const MDX_PATH = path.join(
 );
 
 const slugify = (input) => {
-  console.log(input);
-
   return input
     .toString()
     .toLowerCase()
@@ -24,8 +22,6 @@ const slugify = (input) => {
 const ROUTES_PATH = path.join(process.cwd(), "lib", "doc-routes.json");
 
 const transformHeading = ({ level, heading, docSlug }) => {
-  console.log(heading);
-
   const id = slugify(heading);
 
   return {
@@ -62,7 +58,6 @@ module.exports.generateNav = async () => {
       const source = fs.readFileSync(file, "utf8");
       const { data } = matter(source);
 
-      console.log(JSON.stringify(data));
       const slug = `/docs${file
         .replace(`${MDX_PATH}`, "")
         .replace(".mdx", "")}`;
