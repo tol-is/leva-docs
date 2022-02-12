@@ -95,16 +95,15 @@ const SectionBlock = ({ title, label, description, href, children }) => {
       css={{
         gap: "$4",
         position: "relative",
-        justifyContent: "flex-start",
       }}
     >
       <H5 as="h2">{title}</H5>
 
-      <Box css={{ maxWidth: "320px", position: "relative", zIndex: 12 }}>
+      <Box css={{ maxWidth: "350px", position: "relative", zIndex: 12 }}>
         {children}
       </Box>
 
-      <Paragraph>{description}</Paragraph>
+      <Paragraph css={{ maxWidth: "30ch" }}>{description}</Paragraph>
       <div>
         <SectionLink href={href}>
           <Box css={{ display: "flex", alignItems: "center" }}>
