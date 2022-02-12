@@ -2,6 +2,6 @@ export const slugify = (input: string) =>
   input
     .toLowerCase()
     .replace(/\s+/g, "-")
-    .replaceAll("_", "-")
-    .replaceAll("--", "-")
+    .replace(/_/g, "-")
+    .replace(/--/g, "-")
     .slice(0, 200);
