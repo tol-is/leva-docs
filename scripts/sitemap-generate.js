@@ -22,7 +22,7 @@ const slugify = (input) => {
 const ROUTES_PATH = path.join(process.cwd(), "lib", "sitemap.json");
 
 const transformHeading = ({ level, heading, docSlug }) => {
-  const id = slugify(heading);
+  const id = level === 1 ? "top" : slugify(heading);
 
   return {
     id,

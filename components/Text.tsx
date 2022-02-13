@@ -71,7 +71,11 @@ export const Heading = (props: HeadingProps) => {
             </NextLink>
             <Box
               id={id}
-              css={{ display: "block", position: "relative", top: "-230px" }}
+              css={{
+                display: "block",
+                position: "relative",
+                top: `calc(($12 + $6) * -1)`,
+              }}
             />
           </>
         ) : null}
