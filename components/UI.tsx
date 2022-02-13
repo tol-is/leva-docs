@@ -16,10 +16,10 @@ export const Container = styled("div", {
   variants: {
     layout: {
       home: {
-        maxWidth: "80rem",
+        maxWidth: "$containerHome",
       },
       doc: {
-        maxWidth: "60rem",
+        maxWidth: "$containerDoc",
       },
     },
   },
