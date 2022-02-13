@@ -94,6 +94,15 @@ export const {
       averta: "'Averta PE', system-ui, sans-serif",
       mono: "iA Writer Mono S, monospace-ui, monospace",
     },
+    shadows: {
+      level1: "0 0 9px 0 #00000088",
+      level2: "0 4px 14px #00000033",
+    },
+    radii: {
+      xs: "2px",
+      sm: "3px",
+      lg: "10px",
+    },
   },
   media: {
     xs: "(min-width: 375px)",

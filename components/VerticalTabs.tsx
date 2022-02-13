@@ -55,16 +55,18 @@ export const VerticalTabsTrigger = ({
   return (
     <StyledTrigger value={value} active={active}>
       <H5 as="h3">{title}</H5>
-      <Paragraph>{children}</Paragraph>
+      <Paragraph css={{ maxWidth: "42ch" }}>{children}</Paragraph>
     </StyledTrigger>
   );
 };
 
 export const VerticalTabsContent = styled(Tabs.Content, {
   padding: "$6",
-  backgroundColor: "$grey80",
+  backgroundColor: "$grey90",
+  boxShadow: "$level1",
+  borderRadius: "$lg",
   "&:focus": {
     outline: "1px solid $hiContrast",
-    outlineOffset: "6px",
+    outlineOffset: "3px",
   },
 });

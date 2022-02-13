@@ -75,7 +75,7 @@ export const HomeFeatures = () => {
   );
 };
 const FeaturesTabs = () => {
-  const [value, setValue] = React.useState("tab1");
+  const [value, setValue] = React.useState("tab0");
 
   return (
     <VerticalTabs
@@ -85,7 +85,15 @@ const FeaturesTabs = () => {
       onValueChange={setValue}
       css={{ marginTop: "$9" }}
     >
-      <Grid columns={2} css={{ gap: "$5", "@lg": { gap: "$10" } }}>
+      <Grid
+        columns={2}
+        css={{
+          display: "grid",
+          gridTemplateColumns: "3fr 2fr",
+          gap: "$5",
+          "@lg": { gap: "$10" },
+        }}
+      >
         <VerticalTabsList>
           {features.map((feat, index) => (
             <VerticalTabsTrigger
