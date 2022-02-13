@@ -52,7 +52,7 @@ export const CodeBlock = ({ code, language }) => {
   return (
     <Highlight
       {...defaultProps}
-      code={code}
+      code={code.trim()}
       language={language}
       theme={codeTheme}
     >
