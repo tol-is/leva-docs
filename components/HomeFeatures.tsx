@@ -57,7 +57,7 @@ const features = [
 
 export const HomeFeatures = () => {
   return (
-    <Container layout="home" as="section" css={{ position: "relative" }}>
+    <Container as="section" css={{ position: "relative" }}>
       <DisplayMono>Batteries Included</DisplayMono>
       <Display2 as="h2" css={{ margin: "$2 0 $4 0", maxWidth: "30ch" }}>
         With 12 built-in input types, and unlimited flexibility for the most

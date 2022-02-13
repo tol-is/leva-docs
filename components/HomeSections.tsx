@@ -121,7 +121,7 @@ const SectionBlock = ({ title, label, description, href, children }) => {
 
 export const HomeSections = () => {
   return (
-    <Container layout="home" as="section">
+    <Container as="section">
       <Carousel>
         <SectionBlock
           href="/docs/intro"

@@ -9,7 +9,7 @@ import { PrimaryCta } from "./Actions";
 
 export const HomeIntro = ({ store }) => {
   return (
-    <Container layout="home" as="section" css={{ position: "relative" }}>
+    <Container as="section" css={{ position: "relative" }}>
       <DisplayMono as="p" css={{ marginBottom: "$3" }}>
         By Poimandres
       </DisplayMono>

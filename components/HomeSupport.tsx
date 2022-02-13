@@ -7,7 +7,6 @@ import { Box, Container } from "./UI";
 export const HomeSupport = () => {
   return (
     <Container
-      layout="home"
       as="section"
       css={{
         position: "relative",
