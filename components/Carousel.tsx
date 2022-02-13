@@ -18,6 +18,7 @@ export const Carousel = ({ children }) => {
       <ScrollViewport>
         <Box
           css={{
+            padding: "$1",
             gap: "$8",
             display: "grid",
             gridTemplateColumns: `repeat(${count}, minmax(0px, 1fr))`,

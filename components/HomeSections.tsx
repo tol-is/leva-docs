@@ -81,9 +81,10 @@ const SectionLink = styled(Anchor, {
   },
   "& svg": {
     transition: "all 0.1s ease-out",
+    transform: "translateX(-50%)",
   },
   "&:hover svg, &:focus svg": {
-    transform: "translateX(50%)",
+    transform: "translateX(0%)",
   },
 });
 
