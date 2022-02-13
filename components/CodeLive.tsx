@@ -4,7 +4,7 @@ import { LevaPanel, useControls, useCreateStore } from "leva";
 import { CodeBlock } from "./CodeBlock";
 import { Flex, Box } from "@components/UI";
 
-export const Pre = ({ code, language }) => {
+export const CodeLive = ({ code, language }) => {
   const store = useCreateStore();
   useControls(
     {
@@ -64,7 +64,7 @@ export const Pre = ({ code, language }) => {
           },
         }}
       >
-        <CodeBlock code={code} language={language} />
+        <CodeBlock language={language} code={code} />
       </Box>
     </Flex>
   );
