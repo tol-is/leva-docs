@@ -77,3 +77,22 @@ code {
     scroll-behavior: auto !important;
   }
 }
+
+:root {
+  --shadow-color: 210deg 24% 2%;
+  --shadow-elevation-low: -0.2px 0px 0.2px hsl(var(--shadow-color) / 0.45),
+    -0.3px 0px 0.3px -1.4px hsl(var(--shadow-color) / 0.41),
+    -0.8px 0px 0.9px -2.9px hsl(var(--shadow-color) / 0.37);
+  --shadow-elevation-medium: -0.2px 0px 0.2px hsl(var(--shadow-color) / 0.47),
+    -0.6px 0px 0.6px -1px hsl(var(--shadow-color) / 0.44),
+    -1.6px 0px 1.7px -1.9px hsl(var(--shadow-color) / 0.41),
+    -4px -0.1px 4.3px -2.9px hsl(var(--shadow-color) / 0.37);
+  --shadow-elevation-high: -0.2px 0px 0.2px hsl(var(--shadow-color) / 0.44),
+    -1.1px 0px 1.2px -0.4px hsl(var(--shadow-color) / 0.42),
+    -2px 0px 2.1px -0.8px hsl(var(--shadow-color) / 0.41),
+    -3.5px 0px 3.7px -1.2px hsl(var(--shadow-color) / 0.39),
+    -5.7px -0.1px 6.1px -1.7px hsl(var(--shadow-color) / 0.38),
+    -9.2px -0.1px 9.8px -2.1px hsl(var(--shadow-color) / 0.36),
+    -14.2px -0.2px 15.1px -2.5px hsl(var(--shadow-color) / 0.35),
+    -21.1px -0.3px 22.5px -2.9px hsl(var(--shadow-color) / 0.33);
+}

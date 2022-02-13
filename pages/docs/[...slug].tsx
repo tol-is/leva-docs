@@ -5,8 +5,9 @@ import Head from "next/head";
 
 import { getDocBySlug, getDocsSlugs } from "@lib/mdx";
 import { MDXRenderer } from "@components/mdx/MDXRenderer";
-import { Box, Container, WrapperPageDoc } from "@components/UI";
+import { Box, Container, Grid, WrapperPageDoc } from "@components/UI";
 import { Loading } from "@components/Loading";
+import { Sidenav } from "@components/Sidenav";
 
 export default function Page({ post }) {
   const router = useRouter();
@@ -24,11 +25,25 @@ export default function Page({ post }) {
           <Head>
             <title>Leva | {post.frontmatter.title}</title>
           </Head>
-          <WrapperPageDoc>
-            <Container layout="doc">
-              <MDXRenderer code={post.code} frontmatter={post.frontmatter} />
-            </Container>
-          </WrapperPageDoc>
+          <Container>
+            <Grid css={{ gridTemplateColumns: "1fr $sidenav", gap: "$12" }}>
+              <Box
+                as="article"
+                aria-labelledby="doc-heading"
+                css={{
+                  padding: "$8 $0 $8 $0",
+                  "@sm": {
+                    padding: "$8 $0 $8 $0",
+                  },
+                }}
+              >
+                <MDXRenderer code={post.code} frontmatter={post.frontmatter} />
+              </Box>
+              <Box as="aside">
+                <Sidenav />
+              </Box>
+            </Grid>
+          </Container>
         </>
       )}
     </>

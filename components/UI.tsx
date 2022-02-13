@@ -7,21 +7,12 @@ export const Box = styled("div");
 export const Container = styled("div", {
   margin: "$0 auto",
   padding: "$0 $3",
+  maxWidth: "$container",
   "@xs": {
     padding: "$0 $5",
   },
   "@sm": {
     padding: "$0 $6",
-  },
-  variants: {
-    layout: {
-      home: {
-        maxWidth: "$containerHome",
-      },
-      doc: {
-        maxWidth: "$containerDoc",
-      },
-    },
   },
 });
 

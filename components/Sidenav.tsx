@@ -9,13 +9,15 @@ import { Box, Flex } from "./UI";
 
 const StyledSidenav = styled("nav", {
   display: "none",
-  position: "fixed",
+  position: "sticky",
   zIndex: 10,
-  left: 0,
+  right: 0,
   top: "$8",
   bottom: 0,
   width: "$sidenav",
-  background: "$grey80",
+  height: "calc(100vh - $8)",
+  borderLeft: "1px solid $grey100",
+  boxShadow: "var(--shadow-elevation-medium)",
   "@lg": {
     display: "block",
   },
@@ -36,9 +38,9 @@ const NavRoot = styled("div", {
   flexDirection: "column",
   alignItems: "flex-start",
   justifyContent: "center",
-  padding: "$9 $4 $13 $4",
+  padding: "$8 $4 $8 $4",
   "@sm": {
-    padding: "$9 $6 $13 $6",
+    padding: "$8 $6 $8 $6",
   },
 });
 

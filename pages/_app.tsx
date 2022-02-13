@@ -9,7 +9,7 @@ import { Sidenav } from "@components/Sidenav";
 import { AppHeader } from "@components/AppHeader";
 import { AppFooter } from "@components/AppFooter";
 import { globalStyles } from "@styles/global";
-import { Main } from "@components/UI";
+import { Container, Main } from "@components/UI";
 
 interface LevaAppProps extends AppProps {}
 
@@ -23,7 +23,6 @@ const LevaApp = ({ Component, pageProps }: LevaAppProps) => {
   return (
     <>
       <AppHeader />
-      {!isHome && <Sidenav />}
       <Main>
         <Component {...pageProps} />
       </Main>
