@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Pre } from "./Pre";
+import { Pre } from "../Pre";
 import { H1, H2, H3, H4, H5, Paragraph, Code } from "@components/Text";
 import { Anchor } from "@components/Actions";
 import { Table, Tr, Th, Td, Thead } from "@components/Table";
@@ -21,8 +21,15 @@ const MDXAnchor = styled("a", {
   },
 });
 
+const MDXPre = ({ children }) => {
+  const code = children.props.children.trim();
+  const language = children.props.className.split("-")[1] || "jsx";
+
+  return <Pre language={language} code={code}></Pre>;
+};
+
 export const MDXComponents = {
-  pre: Pre,
+  pre: MDXPre,
   h1: (props) => <DocIntro {...props} prose />,
   h2: (props) => <H2 {...props} prose />,
   h3: (props) => <H3 {...props} prose />,

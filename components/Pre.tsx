@@ -4,10 +4,7 @@ import { LevaPanel, useControls, useCreateStore } from "leva";
 import { CodeBlock } from "./CodeBlock";
 import { Flex, Box } from "@components/UI";
 
-export const Pre = ({ children, demo }) => {
-  const code = children.props.children.trim();
-  const language = children.props.className.split("-")[1] || "jsx";
-
+export const Pre = ({ code, language }) => {
   const store = useCreateStore();
   useControls(
     {
